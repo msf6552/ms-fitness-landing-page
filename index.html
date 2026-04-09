@@ -19,30 +19,30 @@
         .hero h1 { font-size: 4rem; font-weight: 900; margin: 0; text-transform: uppercase; line-height: 1; letter-spacing: -1px; }
         .hero p { font-size: 1.3rem; color: #bbb; max-width: 700px; margin: 25px auto; line-height: 1.6; font-weight: 300; }
 
-        .mission { padding: 100px 20px; text-align: center; max-width: 850px; margin: 0 auto; }
+        .mission { padding: 80px 20px; text-align: center; max-width: 850px; margin: 0 auto; }
         .mission h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; color: #e63946; margin-bottom: 15px; font-weight: 700; }
         .mission h3 { font-size: 2.2rem; font-weight: 700; margin-bottom: 25px; line-height: 1.2; }
         .mission p { color: #888; line-height: 1.9; font-size: 1.1rem; }
 
-        .slider-section { padding-bottom: 100px; background-color: #050505; }
-        .slider-container { position: relative; max-width: 500px; margin: 0 auto; overflow: hidden; border: 1px solid #1a1a1a; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        .slider-section { padding-bottom: 60px; background-color: #050505; }
+        .slider-container { position: relative; max-width: 500px; margin: 0 auto; overflow: hidden; border: 1px solid #1a1a1a; border-radius: 12px; }
         .slides { display: flex; transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
         .slide { min-width: 100%; aspect-ratio: 1/1; }
         .slide img { width: 100%; height: 100%; object-fit: cover; }
         
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.8); color: white; border: none; width: 50px; height: 50px; cursor: pointer; z-index: 10; font-size: 1.2rem; border-radius: 50%; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.8); color: white; border: none; width: 50px; height: 50px; cursor: pointer; z-index: 10; font-size: 1.2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
         .slider-btn:hover { background: #e63946; }
         .prev { left: 15px; }
         .next { right: 15px; }
 
-        .cta-btn { background: #e63946; color: white; padding: 20px 50px; text-decoration: none; border-radius: 2px; font-weight: 900; display: inline-block; margin-top: 30px; transition: 0.4s; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+        .cta-btn { background: #e63946; color: white; padding: 20px 50px; text-decoration: none; border-radius: 2px; font-weight: 900; display: inline-block; margin-top: 30px; transition: 0.4s; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; border: none; cursor: pointer; }
         .cta-btn:hover { background: #fff; color: #000; transform: translateY(-3px); }
 
-        .insta-footer { padding: 60px 20px; text-align: center; background: #000; border-top: 1px solid #1a1a1a; }
-        .insta-link { color: white; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .insta-link:hover { color: #e63946; }
+        /* Form Section */
+        #apply { padding: 100px 20px; background: #000; text-align: center; }
+        .form-wrapper { max-width: 600px; margin: 40px auto; border-radius: 15px; overflow: hidden; border: 1px solid #1a1a1a; background: #000; height: 600px; }
 
-        footer { text-align: center; padding: 40px; font-size: 0.75rem; color: #444; letter-spacing: 1px; }
+        footer { text-align: center; padding: 40px; font-size: 0.75rem; color: #444; border-top: 1px solid #1a1a1a; }
     </style>
 </head>
 <body>
@@ -57,7 +57,7 @@
     <section class="hero">
         <h1>EVOLVE <span style="color: #e63946;">STRONGER</span></h1>
         <p>Premium online coaching designed for high-performers. Science-backed protocols. Metabolic optimization. Sustainable results.</p>
-        <a href="https://tr.ee/JIZ0IZsZla" class="cta-btn" target="_blank">Get Started</a>
+        <a href="#apply" class="cta-btn">Join The Team</a>
     </section>
 
     <section class="mission">
@@ -75,7 +75,6 @@
         <div style="text-align: center; margin-bottom: 40px;">
             <h2 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; color: #e63946;">Proven Results</h2>
         </div>
-
         <div class="slider-container">
             <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
             <div class="slides" id="slider">
@@ -96,11 +95,13 @@
         </div>
     </section>
 
-    <div class="insta-footer">
-        <a href="https://www.instagram.com/ms_trains__?igsh=MTFyOWd1dHdtczVuag%3D%3D&utm_source=qr" target="_blank" class="insta-link">
-            <i class="fab fa-instagram" style="font-size: 1.5rem;"></i> Follow @ms_trains__ for daily insights
-        </a>
-    </div>
+    <section id="apply">
+        <h2 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; color: #e63946;">Application</h2>
+        <h3 style="font-size: 2rem; margin-top: 10px;">Start Your Transformation</h3>
+        <div class="form-wrapper">
+            <iframe src="https://tr.ee/JIZ0IZsZla" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+    </section>
 
     <script>
         let index = 0;
