@@ -5,78 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MS Fitness | Precision Coaching</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; }
-        body { margin: 0; font-family: 'Inter', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background-color: #050505; color: white; overflow-x: hidden; scroll-behavior: smooth; }
         
-        /* Navigation/Brand Bar */
-        nav { padding: 20px; text-align: center; border-bottom: 1px solid #1a1a1a; background: #000; }
-        .brand-logo { font-weight: 900; font-size: 1.5rem; letter-spacing: 4px; color: #e63946; }
+        nav { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; background: #000; border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 100; }
+        .brand-logo { font-weight: 900; font-size: 1.4rem; letter-spacing: 4px; color: #e63946; text-decoration: none; }
+        .nav-social a { color: white; font-size: 1.5rem; transition: 0.3s; }
+        .nav-social a:hover { color: #e63946; }
 
-        /* Hero / Introduction */
-        .hero { padding: 100px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bio-bg.jpg'); background-size: cover; background-position: center; border-bottom: 1px solid #1a1a1a; }
-        .hero h1 { font-size: 3.5rem; font-weight: 900; margin: 0; text-transform: uppercase; line-height: 1; }
-        .hero p { font-size: 1.2rem; color: #aaa; max-width: 600px; margin: 20px auto; line-height: 1.6; }
+        .hero { padding: 120px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('bio-bg.jpg'); background-size: cover; background-position: center; }
+        .hero h1 { font-size: 4rem; font-weight: 900; margin: 0; text-transform: uppercase; line-height: 1; letter-spacing: -1px; }
+        .hero p { font-size: 1.3rem; color: #bbb; max-width: 700px; margin: 25px auto; line-height: 1.6; font-weight: 300; }
 
-        /* Brand Mission Section */
-        .mission { padding: 80px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
-        .mission h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: #e63946; margin-bottom: 10px; }
-        .mission h3 { font-size: 2rem; font-weight: 700; margin-bottom: 30px; }
+        .mission { padding: 100px 20px; text-align: center; max-width: 850px; margin: 0 auto; }
+        .mission h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; color: #e63946; margin-bottom: 15px; font-weight: 700; }
+        .mission h3 { font-size: 2.2rem; font-weight: 700; margin-bottom: 25px; line-height: 1.2; }
+        .mission p { color: #888; line-height: 1.9; font-size: 1.1rem; }
 
-        /* Transformation Slider */
-        .slider-container { position: relative; max-width: 600px; margin: 0 auto 100px; overflow: hidden; border: 1px solid #222; border-radius: 8px; }
-        .slides { display: flex; transition: transform 0.5s ease-in-out; }
+        .slider-section { padding-bottom: 100px; background-color: #050505; }
+        .slider-container { position: relative; max-width: 500px; margin: 0 auto; overflow: hidden; border: 1px solid #1a1a1a; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        .slides { display: flex; transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
         .slide { min-width: 100%; aspect-ratio: 1/1; }
         .slide img { width: 100%; height: 100%; object-fit: cover; }
         
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; padding: 15px; cursor: pointer; z-index: 10; font-size: 1.5rem; }
-        .prev { left: 0; }
-        .next { right: 0; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.8); color: white; border: none; width: 50px; height: 50px; cursor: pointer; z-index: 10; font-size: 1.2rem; border-radius: 50%; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
+        .slider-btn:hover { background: #e63946; }
+        .prev { left: 15px; }
+        .next { right: 15px; }
 
-        .cta-btn { background: #e63946; color: white; padding: 18px 40px; text-decoration: none; border-radius: 4px; font-weight: 700; display: inline-block; margin-top: 20px; transition: 0.3s; }
-        .cta-btn:hover { background: #ff4d5a; transform: translateY(-2px); }
+        .cta-btn { background: #e63946; color: white; padding: 20px 50px; text-decoration: none; border-radius: 2px; font-weight: 900; display: inline-block; margin-top: 30px; transition: 0.4s; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+        .cta-btn:hover { background: #fff; color: #000; transform: translateY(-3px); }
+
+        .insta-footer { padding: 60px 20px; text-align: center; background: #000; border-top: 1px solid #1a1a1a; }
+        .insta-link { color: white; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .insta-link:hover { color: #e63946; }
+
+        footer { text-align: center; padding: 40px; font-size: 0.75rem; color: #444; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
-    <nav><div class="brand-logo">MS FITNESS</div></nav>
+    <nav>
+        <a href="#" class="brand-logo">MS FITNESS</a>
+        <div class="nav-social">
+            <a href="https://www.instagram.com/ms_trains__?igsh=MTFyOWd1dHdtczVuag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
 
     <section class="hero">
-        <h1>BEYOND THE <span style="color: #e63946;">STRENGTH</span></h1>
-        <p>Expert led online coaching and personal training focused on evidence-based nutrition and metabolic optimization.</p>
-        <a href="https://wa.me/YOUR_NUMBER" class="cta-btn">GET STARTED</a>
+        <h1>EVOLVE <span style="color: #e63946;">STRONGER</span></h1>
+        <p>Premium online coaching designed for high-performers. Science-backed protocols. Metabolic optimization. Sustainable results.</p>
+        <a href="https://tr.ee/JIZ0IZsZla" class="cta-btn" target="_blank">Get Started</a>
     </section>
 
     <section class="mission">
-        <h2>What is MS Fitness?</h2>
-        <h3>A scientific approach to body transformation.</h3>
-        <p style="color: #ccc; line-height: 1.8;">
-            MS Fitness isn't just about lifting weights. It’s a comprehensive coaching system designed by <strong>Maninder Singh Sandhu</strong>. 
-            We focus on the <strong>metabolic blueprint</strong> analyzing your unique biology to build a sustainable plan that delivers high-performance results without starvation or burnout.
+        <h2>The MS Fitness Philosophy</h2>
+        <h3>Decoding Your Metabolic Blueprint.</h3>
+        <p>
+            MS Fitness represents the intersection of elite performance and clinical nutrition science. 
+            Founded by <strong>Maninder Singh Sandhu</strong>, our mission is to eliminate guesswork. 
+            We provide a structured, data-driven methodology that optimizes your physiology 
+            to ensure that every rep and every meal works toward your specific body composition goals.
         </p>
     </section>
 
-    <section style="text-align: center; margin-bottom: 40px;">
-        <h2 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: #e63946;">Client Success Stories</h2>
+    <section class="slider-section">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; color: #e63946;">Proven Results</h2>
+        </div>
+
+        <div class="slider-container">
+            <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="slides" id="slider">
+                <div class="slide"><img src="client1.jpg"></div>
+                <div class="slide"><img src="client2.jpg"></div>
+                <div class="slide"><img src="client3.jpg"></div>
+                <div class="slide"><img src="client4.jpg"></div>
+                <div class="slide"><img src="client5.jpg"></div>
+                <div class="slide"><img src="client6.jpg"></div>
+                <div class="slide"><img src="client7.jpg"></div>
+                <div class="slide"><img src="client8.jpg"></div>
+                <div class="slide"><img src="client9.jpg"></div>
+                <div class="slide"><img src="client10.jpg"></div>
+                <div class="slide"><img src="client11.jpg"></div>
+                <div class="slide"><img src="client12.jpg"></div>
+            </div>
+            <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
     </section>
 
-    <div class="slider-container">
-        <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-        <div class="slides" id="slider">
-            <div class="slide"><img src="client1.jpg"></div>
-            <div class="slide"><img src="client2.jpg"></div>
-            <div class="slide"><img src="client3.jpg"></div>
-            <div class="slide"><img src="client4.jpg"></div>
-            <div class="slide"><img src="client5.jpg"></div>
-            <div class="slide"><img src="client6.jpg"></div>
-            <div class="slide"><img src="client7.jpg"></div>
-            <div class="slide"><img src="client8.jpg"></div>
-            <div class="slide"><img src="client9.jpg"></div>
-            <div class="slide"><img src="client10.jpg"></div>
-            <div class="slide"><img src="client11.jpg"></div>
-            <div class="slide"><img src="client12.jpg"></div>
-        </div>
-        <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+    <div class="insta-footer">
+        <a href="https://www.instagram.com/ms_trains__?igsh=MTFyOWd1dHdtczVuag%3D%3D&utm_source=qr" target="_blank" class="insta-link">
+            <i class="fab fa-instagram" style="font-size: 1.5rem;"></i> Follow @ms_trains__ for daily insights
+        </a>
     </div>
 
     <script>
@@ -89,8 +112,8 @@
         }
     </script>
 
-    <footer style="text-align: center; padding: 40px; border-top: 1px solid #1a1a1a; font-size: 0.8rem; color: #555;">
-        &copy; 2026 MS FITNESS | MANINDER SINGH SANDHU
+    <footer>
+        &copy; 2026 MS FITNESS | PRECISION COACHING BY MANINDER SINGH SANDHU
     </footer>
 
 </body>
