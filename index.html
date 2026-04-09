@@ -3,50 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MS Fitness | Maninder Singh Sandhu</title>
+    <title>MS Fitness | Precision Coaching</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; font-family: 'Helvetica', Arial, sans-serif; background-color: #000; color: white; }
-        .hero { height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; background: #111; border-bottom: 2px solid #e63946; }
-        .btn { background: #e63946; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 20px; transition: 0.3s; }
-        .btn:hover { background: #b91c1c; }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
+        
+        /* Navigation/Brand Bar */
+        nav { padding: 20px; text-align: center; border-bottom: 1px solid #1a1a1a; background: #000; }
+        .brand-logo { font-weight: 900; font-size: 1.5rem; letter-spacing: 4px; color: #e63946; }
+
+        /* Hero / Introduction */
+        .hero { padding: 100px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bio-bg.jpg'); background-size: cover; background-position: center; border-bottom: 1px solid #1a1a1a; }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; margin: 0; text-transform: uppercase; line-height: 1; }
+        .hero p { font-size: 1.2rem; color: #aaa; max-width: 600px; margin: 20px auto; line-height: 1.6; }
+
+        /* Brand Mission Section */
+        .mission { padding: 80px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
+        .mission h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: #e63946; margin-bottom: 10px; }
+        .mission h3 { font-size: 2rem; font-weight: 700; margin-bottom: 30px; }
+
+        /* Transformation Slider */
+        .slider-container { position: relative; max-width: 600px; margin: 0 auto 100px; overflow: hidden; border: 1px solid #222; border-radius: 8px; }
+        .slides { display: flex; transition: transform 0.5s ease-in-out; }
+        .slide { min-width: 100%; aspect-ratio: 1/1; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; padding: 15px; cursor: pointer; z-index: 10; font-size: 1.5rem; }
+        .prev { left: 0; }
+        .next { right: 0; }
+
+        .cta-btn { background: #e63946; color: white; padding: 18px 40px; text-decoration: none; border-radius: 4px; font-weight: 700; display: inline-block; margin-top: 20px; transition: 0.3s; }
+        .cta-btn:hover { background: #ff4d5a; transform: translateY(-2px); }
     </style>
 </head>
 <body>
 
+    <nav><div class="brand-logo">MS FITNESS</div></nav>
+
     <section class="hero">
-        <div>
-            <h1 style="font-size: 3rem; margin: 0;">MS FITNESS</h1>
-            <p style="font-size: 1.2rem; color: #ccc;">Online Coaching & Personal Training</p>
-            <a href="https://wa.me/YOUR_PHONE_NUMBER" class="btn">START TRANSFORMATION</a>
-        </div>
+        <h1>BEYOND THE <span style="color: #e63946;">STRENGTH</span></h1>
+        <p>Expert-led online coaching and personal training focused on evidence-based nutrition and metabolic optimization.</p>
+        <a href="https://wa.me/YOUR_NUMBER" class="cta-btn">GET STARTED</a>
     </section>
 
-    <section id="about" style="position: relative; padding: 100px 20px; text-align: center; min-height: 500px; display: flex; align-items: center; justify-content: center; background-color: #111; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('bio-bg.jpg'); background-size: cover; background-position: center; filter: blur(8px) brightness(0.4); transform: scale(1.1); z-index: 1;"></div>
-        <div style="position: relative; z-index: 2; max-width: 800px; padding: 20px;">
-            <h2 style="font-size: 2.5rem; color: #e63946; text-transform: uppercase; margin-bottom: 10px;">Meet Your Coach</h2>
-            <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: #fff;">Maninder Singh Sandhu</h3>
-            <p style="font-size: 1.2rem; line-height: 1.8; color: #ffffff; text-shadow: 2px 2px 4px #000;">I’m a professional fitness coach dedicated to helping you achieve sustainable, science-backed results. With years of experience training clients and a deep focus on evidence-based nutrition, I provide the <strong>metabolic blueprint</strong> you need to transform your body.</p>
-        </div>
+    <section class="mission">
+        <h2>What is MS Fitness?</h2>
+        <h3>A scientific approach to body transformation.</h3>
+        <p style="color: #ccc; line-height: 1.8;">
+            MS Fitness isn't just about lifting weights. It’s a comprehensive coaching system designed by <strong>Maninder Singh Sandhu</strong>. 
+            We focus on the <strong>metabolic blueprint</strong>—analyzing your unique biology to build a sustainable plan that delivers high-performance results without starvation or burnout.
+        </p>
     </section>
 
-    <section id="results" style="padding: 60px 10px; background-color: #000; text-align: center;">
-        <h2 style="font-size: 2.2rem; color: #e63946; text-transform: uppercase; margin-bottom: 30px; letter-spacing: 2px;">Real Results</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; max-width: 1200px; margin: 0 auto; padding: 0 10px;">
-            <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; background: #111;"><img src="client1.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-            <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; background: #111;"><img src="client2.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-            <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; background: #111;"><img src="client3.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-            <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; background: #111;"><img src="client4.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-            <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; background: #111;"><img src="client5.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-            <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; background: #111;"><img src="client6.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-            <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; background: #111;"><img src="client7.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-            <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; background: #111;"><img src="client8.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-            <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; background: #111;"><img src="client9.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-            <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; background: #111;"><img src="client10.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-            <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; background: #111;"><img src="client11.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-            <div style="aspect-ratio: 1/1; overflow: hidden; border-radius: 4px; background: #111;"><img src="client12.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        </div>
+    <section style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: #e63946;">Client Success Stories</h2>
     </section>
+
+    <div class="slider-container">
+        <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="slides" id="slider">
+            <div class="slide"><img src="client1.jpg"></div>
+            <div class="slide"><img src="client2.jpg"></div>
+            <div class="slide"><img src="client3.jpg"></div>
+            <div class="slide"><img src="client4.jpg"></div>
+            <div class="slide"><img src="client5.jpg"></div>
+            <div class="slide"><img src="client6.jpg"></div>
+            <div class="slide"><img src="client7.jpg"></div>
+            <div class="slide"><img src="client8.jpg"></div>
+            <div class="slide"><img src="client9.jpg"></div>
+            <div class="slide"><img src="client10.jpg"></div>
+            <div class="slide"><img src="client11.jpg"></div>
+            <div class="slide"><img src="client12.jpg"></div>
+        </div>
+        <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let index = 0;
+        function moveSlide(step) {
+            const slides = document.getElementById('slider');
+            const totalSlides = slides.children.length;
+            index = (index + step + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+    </script>
+
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid #1a1a1a; font-size: 0.8rem; color: #555;">
+        &copy; 2026 MS FITNESS | MANINDER SINGH SANDHU
+    </footer>
 
 </body>
 </html>
