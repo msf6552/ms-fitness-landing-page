@@ -1,119 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MS Fitness | Precision Coaching</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * { box-sizing: border-box; }
-        body { margin: 0; font-family: 'Inter', sans-serif; background-color: #050505; color: white; overflow-x: hidden; scroll-behavior: smooth; }
-        
-        nav { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; background: #000; border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 100; }
-        .brand-logo { font-weight: 900; font-size: 1.4rem; letter-spacing: 4px; color: #e63946; text-decoration: none; }
-        .nav-social a { color: white; font-size: 1.5rem; transition: 0.3s; }
-        .nav-social a:hover { color: #e63946; }
-
-        .hero { padding: 120px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('bio-bg.jpg'); background-size: cover; background-position: center; }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900; margin: 0; text-transform: uppercase; line-height: 1; letter-spacing: -1px; }
-        .hero p { font-size: 1.2rem; color: #bbb; max-width: 700px; margin: 25px auto; line-height: 1.6; font-weight: 300; }
-
-        .mission { padding: 100px 20px; text-align: center; max-width: 850px; margin: 0 auto; }
-        .mission h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; color: #e63946; margin-bottom: 15px; font-weight: 700; }
-        .mission h3 { font-size: 2.2rem; font-weight: 700; margin-bottom: 25px; line-height: 1.2; }
-        .mission p { color: #888; line-height: 1.9; font-size: 1.1rem; }
-
-        .slider-section { padding-bottom: 100px; background-color: #050505; }
-        .slider-container { position: relative; max-width: 500px; margin: 0 auto; overflow: hidden; border: 1px solid #1a1a1a; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
-        .slides { display: flex; transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
-        .slide { min-width: 100%; aspect-ratio: 1/1; }
-        .slide img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.8); color: white; border: none; width: 50px; height: 50px; cursor: pointer; z-index: 10; font-size: 1.2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-        .slider-btn:hover { background: #e63946; }
-        .prev { left: 15px; }
-        .next { right: 15px; }
-
-        .cta-btn { background: #e63946; color: white; padding: 20px 50px; text-decoration: none; border-radius: 2px; font-weight: 900; display: inline-block; transition: 0.4s; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
-        .cta-btn:hover { background: #fff; color: #000; transform: translateY(-3px); }
-
-        /* Application Section */
-        #apply { padding: 100px 20px; text-align: center; background: #000; border-top: 1px solid #1a1a1a; }
-        .apply-content { max-width: 600px; margin: 0 auto; }
-
-        footer { text-align: center; padding: 60px; font-size: 0.75rem; color: #444; border-top: 1px solid #1a1a1a; letter-spacing: 1px; }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <a href="#" class="brand-logo">MS FITNESS</a>
-        <div class="nav-social">
-            <a href="https://www.instagram.com/ms_trains__?igsh=MTFyOWd1dHdtczVuag%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+<!-- HERO (UPDATED WITH YOUR IMAGE) -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>EVOLVE <span style="color: #e63946;">STRONGER</span></h1>
+            <p>Elite online coaching built on real science. No guesswork. No shortcuts. Just proven systems that deliver results.</p>
+            <a href="https://tr.ee/JIZ0IZsZla" target="_blank" class="cta-btn">Join The Team</a>
         </div>
-    </nav>
-
-    <section class="hero">
-        <h1>EVOLVE <span style="color: #e63946;">STRONGER</span></h1>
-        <p>Premium online coaching designed for high-performers. Science-backed protocols. Metabolic optimization. Sustainable results.</p>
-        <a href="https://tr.ee/JIZ0IZsZla" target="_blank" class="cta-btn">Join The Team</a>
-    </section>
-
-    <section class="mission">
-        <h2>The MS Fitness Philosophy</h2>
-        <h3>Decoding Your Metabolic Blueprint.</h3>
-        <p>MS Fitness represents the intersection of elite performance and clinical nutrition science. Founded by <strong>Maninder Singh Sandhu</strong>, our mission is to eliminate guesswork. We provide a structured, data-driven methodology that optimizes your physiology to ensure sustainable body composition results.</p>
-    </section>
-
-    <section class="slider-section">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h2 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; color: #e63946;">Proven Results</h2>
+        <div class="hero-image">
+            <img src="your-photo.jpg" alt="Maninder Singh">
         </div>
-        <div class="slider-container">
-            <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-            <div class="slides" id="slider">
-                <div class="slide"><img src="client1.jpg"></div>
-                <div class="slide"><img src="client2.jpg"></div>
-                <div class="slide"><img src="client3.jpg"></div>
-                <div class="slide"><img src="client4.jpg"></div>
-                <div class="slide"><img src="client5.jpg"></div>
-                <div class="slide"><img src="client6.jpg"></div>
-                <div class="slide"><img src="client7.jpg"></div>
-                <div class="slide"><img src="client8.jpg"></div>
-                <div class="slide"><img src="client9.jpg"></div>
-                <div class="slide"><img src="client10.jpg"></div>
-                <div class="slide"><img src="client11.jpg"></div>
-                <div class="slide"><img src="client12.jpg"></div>
-            </div>
-            <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+<style>
+.hero {
+    padding: 100px 20px;
+    background: #050505;
+}
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+.hero-text {
+    max-width: 500px;
+}
+.hero-image img {
+    width: 320px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}
+</style>
+
+
+<!-- BIO / ABOUT (UPGRADED) -->
+<section class="mission">
+    <h2>About Me</h2>
+    <h3>Real Coaching. Real Results.</h3>
+    <p>
+        I’m <strong>Maninder Singh Sandhu</strong>, and my goal is simple — to remove confusion from fitness.
+        No random diets. No copy-paste workouts.
+        Everything you get is built specifically for your body, your lifestyle, and your goals.
+        <br><br>
+        This is not just a plan — this is a system where we work together, adjust in real-time, and make sure you stay consistent and actually see results.
+    </p>
+</section>
+
+
+<!-- SERVICES SECTION (NEW - VERY IMPORTANT) -->
+<section class="services">
+    <h2>What You Get</h2>
+    <div class="service-grid">
+
+        <div class="service-card">
+            <i class="fas fa-utensils"></i>
+            <h4>Customized Meal Plan</h4>
+            <p>Built around your lifestyle, preferences, and goals.</p>
         </div>
-    </section>
 
-    <section id="apply">
-        <div class="apply-content">
-            <h2 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; color: #e63946;">Ready to Begin?</h2>
-            <h3 style="font-size: 2.2rem; margin: 20px 0;">Apply for the 2026 Intake</h3>
-            <p style="color: #888; margin-bottom: 40px;">Spaces are limited to ensure elite, one-on-one metabolic coaching for every client.</p>
-            <a href="https://tr.ee/JIZ0IZsZla" target="_blank" class="cta-btn">Open Application Form</a>
+        <div class="service-card">
+            <i class="fas fa-dumbbell"></i>
+            <h4>Workout Plan</h4>
+            <p>Gym or home workouts designed for maximum results.</p>
         </div>
-    </section>
 
-    <script>
-        let index = 0;
-        function moveSlide(step) {
-            const slides = document.getElementById('slider');
-            const totalSlides = slides.children.length;
-            index = (index + step + totalSlides) % totalSlides;
-            slides.style.transform = `translateX(-${index * 100}%)`;
-        }
-        // Auto-slide every 5 seconds
-        setInterval(() => moveSlide(1), 5000);
-    </script>
+        <div class="service-card">
+            <i class="fas fa-video"></i>
+            <h4>Exercise Videos</h4>
+            <p>Recorded demonstrations so you never perform exercises wrong.</p>
+        </div>
 
-    <footer>
-        &copy; 2026 MS FITNESS | PRECISION COACHING BY MANINDER SINGH SANDHU
-    </footer>
+        <div class="service-card">
+            <i class="fas fa-comments"></i>
+            <h4>24/7 Support</h4>
+            <p>Call or text anytime for guidance, questions, or motivation.</p>
+        </div>
 
-</body>
-</html>
+        <div class="service-card">
+            <i class="fas fa-sync"></i>
+            <h4>Plan Adjustments</h4>
+            <p>Change meals or workouts anytime based on your progress.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-chart-line"></i>
+            <h4>Weekly Check-ins</h4>
+            <p>Track progress and make sure you're always improving.</p>
+        </div>
+
+    </div>
+</section>
+
+<style>
+.services {
+    padding: 100px 20px;
+    text-align: center;
+    background: #000;
+}
+.services h2 {
+    color: #e63946;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+.service-card {
+    background: #050505;
+    padding: 30px;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: #e63946;
+}
+.service-card i {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #e63946;
+}
+.service-card h4 {
+    margin-bottom: 10px;
+}
+.service-card p {
+    color: #888;
+    font-size: 0.95rem;
+}
+</style>
