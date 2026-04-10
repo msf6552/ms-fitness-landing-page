@@ -1,20 +1,40 @@
-<!-- HERO (UPDATED WITH YOUR IMAGE) -->
-<section class="hero">
-    <div class="hero-content">
-        <div class="hero-text">
-            <h1>EVOLVE <span style="color: #e63946;">STRONGER</span></h1>
-            <p>Elite online coaching built on real science. No guesswork. No shortcuts. Just proven systems that deliver results.</p>
-            <a href="https://tr.ee/JIZ0IZsZla" target="_blank" class="cta-btn">Join The Team</a>
-        </div>
-        <div class="hero-image">
-            <img src="your-photo.jpg" alt="Maninder Singh">
-        </div>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS Fitness | Precision Coaching</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Inter', sans-serif; background-color: #050505; color: white; }
+
+/* NAV */
+nav {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    border-bottom: 1px solid #1a1a1a;
+}
+.brand-logo {
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    color: #e63946;
+}
+.nav-social a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* HERO */
 .hero {
-    padding: 100px 20px;
+    padding: 120px 20px;
     background: #050505;
 }
 .hero-content {
@@ -29,75 +49,47 @@
 .hero-text {
     max-width: 500px;
 }
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+}
+.hero p {
+    color: #bbb;
+    margin: 20px 0;
+}
 .hero-image img {
     width: 320px;
-    height: auto;
     border-radius: 12px;
-    object-fit: cover;
     box-shadow: 0 20px 60px rgba(0,0,0,0.8);
 }
-</style>
 
+/* BUTTON */
+.cta-btn {
+    background: #e63946;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+}
 
-<!-- BIO / ABOUT (UPGRADED) -->
-<section class="mission">
-    <h2>About Me</h2>
-    <h3>Real Coaching. Real Results.</h3>
-    <p>
-        I’m <strong>Maninder Singh Sandhu</strong>, and my goal is simple — to remove confusion from fitness.
-        No random diets. No copy-paste workouts.
-        Everything you get is built specifically for your body, your lifestyle, and your goals.
-        <br><br>
-        This is not just a plan — this is a system where we work together, adjust in real-time, and make sure you stay consistent and actually see results.
-    </p>
-</section>
+/* ABOUT */
+.mission {
+    padding: 100px 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+.mission h2 {
+    color: #e63946;
+    letter-spacing: 3px;
+}
+.mission p {
+    color: #aaa;
+    line-height: 1.8;
+}
 
-
-<!-- SERVICES SECTION (NEW - VERY IMPORTANT) -->
-<section class="services">
-    <h2>What You Get</h2>
-    <div class="service-grid">
-
-        <div class="service-card">
-            <i class="fas fa-utensils"></i>
-            <h4>Customized Meal Plan</h4>
-            <p>Built around your lifestyle, preferences, and goals.</p>
-        </div>
-
-        <div class="service-card">
-            <i class="fas fa-dumbbell"></i>
-            <h4>Workout Plan</h4>
-            <p>Gym or home workouts designed for maximum results.</p>
-        </div>
-
-        <div class="service-card">
-            <i class="fas fa-video"></i>
-            <h4>Exercise Videos</h4>
-            <p>Recorded demonstrations so you never perform exercises wrong.</p>
-        </div>
-
-        <div class="service-card">
-            <i class="fas fa-comments"></i>
-            <h4>24/7 Support</h4>
-            <p>Call or text anytime for guidance, questions, or motivation.</p>
-        </div>
-
-        <div class="service-card">
-            <i class="fas fa-sync"></i>
-            <h4>Plan Adjustments</h4>
-            <p>Change meals or workouts anytime based on your progress.</p>
-        </div>
-
-        <div class="service-card">
-            <i class="fas fa-chart-line"></i>
-            <h4>Weekly Check-ins</h4>
-            <p>Track progress and make sure you're always improving.</p>
-        </div>
-
-    </div>
-</section>
-
-<style>
+/* SERVICES */
 .services {
     padding: 100px 20px;
     text-align: center;
@@ -107,7 +99,6 @@
     color: #e63946;
     margin-bottom: 50px;
     letter-spacing: 3px;
-    text-transform: uppercase;
 }
 .service-grid {
     display: grid;
@@ -132,11 +123,187 @@
     margin-bottom: 15px;
     color: #e63946;
 }
-.service-card h4 {
-    margin-bottom: 10px;
-}
 .service-card p {
     color: #888;
-    font-size: 0.95rem;
+}
+
+/* SLIDER */
+.slider-section {
+    padding: 100px 20px;
+}
+.slider-container {
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    overflow: hidden;
+}
+.slides {
+    display: flex;
+    transition: 0.5s;
+}
+.slide {
+    min-width: 100%;
+}
+.slide img {
+    width: 100%;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* APPLY */
+#apply {
+    padding: 100px 20px;
+    text-align: center;
+}
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #555;
 }
 </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="brand-logo">MS FITNESS</div>
+    <div class="nav-social">
+        <a href="https://www.instagram.com/ms_trains__" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>EVOLVE <span style="color:#e63946;">STRONGER</span></h1>
+            <p>1-on-1 Online Coaching for serious transformations. No guesswork. Just results.</p>
+            <a href="https://tr.ee/JIZ0IZsZla" target="_blank" class="cta-btn">Join The Team</a>
+            <p style="margin-top:10px; font-size:0.9rem; color:#777;">Limited spots available. Only serious clients.</p>
+        </div>
+
+        <!-- IMPORTANT: CHANGE IMAGE NAME -->
+        <div class="hero-image">
+            <img src="myphoto.jpg" alt="Maninder Singh">
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="mission">
+    <h2>About Me</h2>
+    <h3>Real Coaching. Real Results.</h3>
+    <p>
+        I’m <strong>Maninder Singh Sandhu</strong>, and my goal is simple — to remove confusion from fitness.
+        No random diets. No copy-paste workouts. Everything is built specifically for your body, lifestyle, and goals.
+        <br><br>
+        This is not just a plan — this is a system where we work together, adjust in real-time, and make sure you stay consistent and actually see results.
+    </p>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+    <h2>WHAT YOU GET</h2>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <i class="fas fa-utensils"></i>
+            <h4>Customized Nutrition Plan</h4>
+            <p>No generic diets. Fully tailored to your lifestyle and goals.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-dumbbell"></i>
+            <h4>Workout Plan</h4>
+            <p>Structured training for gym or home with maximum results.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-video"></i>
+            <h4>Exercise Videos</h4>
+            <p>My personal recorded demos so you never perform wrong.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-comments"></i>
+            <h4>24/7 Support</h4>
+            <p>Call or message anytime for help or guidance.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-sync"></i>
+            <h4>Plan Adjustments</h4>
+            <p>Change meals or workouts anytime based on progress.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-chart-line"></i>
+            <h4>Weekly Check-ins</h4>
+            <p>Track progress and improve every single week.</p>
+        </div>
+
+    </div>
+
+    <p style="margin-top:40px; color:#aaa; max-width:600px; margin:auto;">
+        This is not a one-size-fits-all program. Every client gets a fully personalized system with continuous support.
+    </p>
+</section>
+
+<!-- RESULTS -->
+<section class="slider-section">
+    <h2 style="text-align:center; color:#e63946;">PROVEN RESULTS</h2>
+
+    <div class="slider-container">
+        <button class="slider-btn prev" onclick="moveSlide(-1)">‹</button>
+
+        <div class="slides" id="slider">
+            <div class="slide"><img src="client1.jpg"></div>
+            <div class="slide"><img src="client2.jpg"></div>
+            <div class="slide"><img src="client3.jpg"></div>
+        </div>
+
+        <button class="slider-btn next" onclick="moveSlide(1)">›</button>
+    </div>
+</section>
+
+<!-- APPLY -->
+<section id="apply">
+    <h2 style="color:#e63946;">READY TO BEGIN?</h2>
+    <h3>Apply for Coaching</h3>
+    <p style="color:#888;">Limited spots to ensure high-quality coaching.</p>
+    <a href="https://tr.ee/JIZ0IZsZla" target="_blank" class="cta-btn">Apply Now</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 MS FITNESS | MANINDER SINGH SANDHU
+</footer>
+
+<!-- SCRIPT -->
+<script>
+let index = 0;
+function moveSlide(step) {
+    const slides = document.getElementById('slider');
+    const total = slides.children.length;
+    index = (index + step + total) % total;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+setInterval(() => moveSlide(1), 4000);
+</script>
+
+</body>
+</html>
