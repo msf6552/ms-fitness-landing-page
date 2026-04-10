@@ -93,6 +93,12 @@ nav {
     border-color: #e63946;
     transform: translateY(-5px);
 }
+.service-card i {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    display: block;
+    color: #e63946;
+}
 
 /* SLIDER */
 .slider-section {
@@ -172,7 +178,13 @@ footer {
 <section class="hero">
     <div>
         <h1>EVOLVE <span style="color:#e63946;">STRONGER</span></h1>
-        <p>1-on-1 Online Coaching for serious transformations. No guesswork. Just results.</p>
+
+        <p>
+        Built for individuals who are serious about changing their physique. 
+        No shortcuts, no guesswork — just structured training, personalized nutrition, 
+        and constant guidance to ensure you progress every single week.
+        </p>
+
         <a href="https://tr.ee/JIZ0IZsZla" target="_blank" class="cta-btn">Join The Team</a>
         <p class="sub-text">Limited spots available. Only serious clients.</p>
     </div>
@@ -182,11 +194,17 @@ footer {
 <section class="mission">
     <h2>About Me</h2>
     <h3>Real Coaching. Real Results.</h3>
+
     <p>
-        I’m <strong>Maninder Singh Sandhu</strong>. No random diets. No copy-paste workouts.
-        Everything is tailored to your body, your lifestyle, and your goals.
-        <br><br>
-        We adjust in real-time to ensure consistency and real results.
+    I’m <strong>Maninder Singh Sandhu</strong>, and my approach is simple — remove confusion and give you a system that actually works.
+    <br><br>
+    Most people fail not because they lack effort, but because they follow random plans with no structure. That’s where I come in.
+    <br><br>
+    Every client I work with gets a fully customized plan based on their body, lifestyle, and goal — whether it’s fat loss, muscle gain, or full transformation.
+    <br><br>
+    But what truly makes the difference is not just the plan — it’s the constant support, real-time adjustments, and accountability that keeps you consistent.
+    <br><br>
+    This is not a temporary fix. This is a system designed to build long-term results.
     </p>
 </section>
 
@@ -197,27 +215,33 @@ footer {
     <div class="service-grid">
 
         <div class="service-card" onclick="openPopup('meal')">
-            🍽️ <h4>Nutrition Plan</h4>
+            <i class="fas fa-utensils"></i>
+            <h4>Customized Nutrition Plan</h4>
         </div>
 
         <div class="service-card" onclick="openPopup('workout')">
-            🏋️ <h4>Workout Plan</h4>
+            <i class="fas fa-dumbbell"></i>
+            <h4>Workout Plan</h4>
         </div>
 
         <div class="service-card" onclick="openPopup('videos')">
-            🎥 <h4>Exercise Videos</h4>
+            <i class="fas fa-video"></i>
+            <h4>Exercise Videos</h4>
         </div>
 
         <div class="service-card" onclick="openPopup('support')">
-            💬 <h4>24/7 Support</h4>
+            <i class="fas fa-comments"></i>
+            <h4>24/7 Support</h4>
         </div>
 
         <div class="service-card" onclick="openPopup('adjust')">
-            🔄 <h4>Adjustments</h4>
+            <i class="fas fa-sync"></i>
+            <h4>Adjustments</h4>
         </div>
 
         <div class="service-card" onclick="openPopup('checkin')">
-            📈 <h4>Check-ins</h4>
+            <i class="fas fa-chart-line"></i>
+            <h4>Weekly Check-ins</h4>
         </div>
 
     </div>
@@ -284,28 +308,28 @@ function openPopup(type) {
     const text = document.getElementById("popup-text");
 
     if(type === "meal"){
-        title.innerText="Nutrition Plan";
-        text.innerText="Fully customized based on your lifestyle and goals.";
+        title.innerText="Customized Nutrition Plan";
+        text.innerText="Fully tailored to your lifestyle, preferences, and goal. No restrictions, just structure that works.";
     }
     if(type === "workout"){
         title.innerText="Workout Plan";
-        text.innerText="Structured workouts tailored for you.";
+        text.innerText="Scientifically structured workouts designed for maximum efficiency.";
     }
     if(type === "videos"){
         title.innerText="Exercise Videos";
-        text.innerText="My personal demos so you never perform wrong.";
+        text.innerText="Access my personally recorded demonstrations to perfect your form.";
     }
     if(type === "support"){
         title.innerText="24/7 Support";
-        text.innerText="Message or call anytime.";
+        text.innerText="Direct access to me anytime for guidance, motivation, or questions.";
     }
     if(type === "adjust"){
-        title.innerText="Adjustments";
-        text.innerText="Plans updated anytime you need.";
+        title.innerText="Plan Adjustments";
+        text.innerText="Instant changes to your plan based on progress or preferences.";
     }
     if(type === "checkin"){
-        title.innerText="Check-ins";
-        text.innerText="Weekly tracking for constant progress.";
+        title.innerText="Weekly Check-ins";
+        text.innerText="Track progress and make strategic changes every week.";
     }
 
     document.getElementById("popup").style.display="flex";
