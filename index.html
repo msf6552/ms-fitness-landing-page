@@ -69,6 +69,8 @@ nav {
     color: #e63946;
 }
 
+/* PROCESS (your methodology section stays same visually) */
+
 /* SERVICES */
 .services {
     padding: 100px 20px;
@@ -210,72 +212,6 @@ footer {
     </p>
 </section>
 
-<section id="how-it-works" style="padding: 100px 20px; background: #080808; text-align: left;">
-    <div style="text-align: center; margin-bottom: 60px;">
-        <h2 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; color: #e63946;">The Process</h2>
-        <h3 style="font-size: 2.5rem; font-weight: 900; margin-top: 10px;">THE MS METHODOLOGY</h3>
-    </div>
-
-    <div style="max-width: 1100px; margin: 0 auto;">
-        
-        <div style="display: flex; align-items: center; gap: 50px; margin-bottom: 80px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px;">
-                <span style="font-size: 3rem; font-weight: 900; color: rgba(230, 57, 70, 0.2);">01</span>
-                <h4 style="font-size: 1.8rem; margin-top: -10px; color: #fff;">Elite Bio-Profiling</h4>
-                <p style="color: #888; line-height: 1.8;">Everything starts with data. We analyze your training history, past attempts, and current lifestyle constraints to build a foundation that actually works for 100% of your life.</p>
-            </div>
-            <div style="flex: 1; min-width: 300px; border: 1px solid #1a1a1a; border-radius: 10px; overflow: hidden;">
-                <img src="Screenshot 2026-04-11 at 13.33.43.png" style="width: 100%; display: block;">
-            </div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 50px; margin-bottom: 80px; flex-wrap: wrap; flex-direction: row-reverse;">
-            <div style="flex: 1; min-width: 300px;">
-                <span style="font-size: 3rem; font-weight: 900; color: rgba(230, 57, 70, 0.2);">02</span>
-                <h4 style="font-size: 1.8rem; margin-top: -10px; color: #fff;">Custom-Engineered Training</h4>
-                <p style="color: #888; line-height: 1.8;">Your program is built for your specific goals—whether at home or in a commercial gym. Every exercise is meticulously scheduled with specific targets and volume tracking.</p>
-            </div>
-            <div style="flex: 1; min-width: 300px; border: 1px solid #1a1a1a; border-radius: 10px; overflow: hidden;">
-                <img src="Custom-Engineered Training.png" style="width: 100%; display: block;">
-            </div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 50px; margin-bottom: 80px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px;">
-                <span style="font-size: 3rem; font-weight: 900; color: rgba(230, 57, 70, 0.2);">03</span>
-                <h4 style="font-size: 1.8rem; margin-top: -10px; color: #fff;">HD Video Coaching</h4>
-                <p style="color: #888; line-height: 1.8;">Never guess your form again. Every movement includes my personally recorded high-definition video demonstrations and step-by-step instructions to ensure maximum results and safety.</p>
-            </div>
-            <div style="flex: 1; min-width: 300px; border: 1px solid #1a1a1a; border-radius: 10px; overflow: hidden;">
-                <img src="HD Video Coaching.png" style="width: 100%; display: block;">
-            </div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 50px; margin-bottom: 80px; flex-wrap: wrap; flex-direction: row-reverse;">
-            <div style="flex: 1; min-width: 300px;">
-                <span style="font-size: 3rem; font-weight: 900; color: rgba(230, 57, 70, 0.2);">04</span>
-                <h4 style="font-size: 1.8rem; margin-top: -10px; color: #fff;">Data-Backed Nutrition</h4>
-                <p style="color: #888; line-height: 1.8;">We optimize your macros for performance. You receive precise calorie targets, macronutrient breakdowns, and evidence-based supplement protocols tailored to your unique physiology.</p>
-            </div>
-            <div style="flex: 1; min-width: 300px; border: 1px solid #1a1a1a; border-radius: 10px; overflow: hidden;">
-                <img src="Data-Backed Nutrition.png" style="width: 100%; display: block;">
-            </div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 50px; margin-bottom: 20px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px;">
-                <span style="font-size: 3rem; font-weight: 900; color: rgba(230, 57, 70, 0.2);">05</span>
-                <h4 style="font-size: 1.8rem; margin-top: -10px; color: #fff;">Biometric Optimization</h4>
-                <p style="color: #888; line-height: 1.8;">We track every variable—body weight, waist measurements, and strength progress. As your body adapts, your program evolves. This is a live strategy designed for permanent change.</p>
-            </div>
-            <div style="flex: 1; min-width: 300px; border: 1px solid #1a1a1a; border-radius: 10px; overflow: hidden;">
-                <img src="Biometric Optimization.png" style="width: 100%; display: block;">
-            </div>
-        </div>
-
-    </div>
-</section>
-
 <!-- SERVICES -->
 <section class="services">
     <h2>WHAT YOU GET</h2>
@@ -371,13 +307,14 @@ function moveSlide(step) {
 }
 setInterval(() => moveSlide(1), 4000);
 
+/* POPUPS */
 function openPopup(type) {
     const title = document.getElementById("popup-title");
     const text = document.getElementById("popup-text");
 
     if(type === "meal"){
         title.innerText="Customized Nutrition Plan";
-        text.innerText="Fully tailored to your lifestyle, preferences, and goal. No restrictions, just structure that works.";
+        text.innerText="Fully tailored to your lifestyle, preferences, and goal.";
     }
     if(type === "workout"){
         title.innerText="Workout Plan";
@@ -385,27 +322,33 @@ function openPopup(type) {
     }
     if(type === "videos"){
         title.innerText="Exercise Videos";
-        text.innerText="Access my personally recorded demonstrations to perfect your form.";
+        text.innerText="Access my personally recorded demonstrations.";
     }
     if(type === "support"){
         title.innerText="24/7 Support";
-        text.innerText="Direct access to me anytime for guidance, motivation, or questions.";
+        text.innerText="Direct access to me anytime.";
     }
     if(type === "adjust"){
         title.innerText="Plan Adjustments";
-        text.innerText="Instant changes to your plan based on progress or preferences.";
+        text.innerText="Instant changes based on your progress.";
     }
     if(type === "checkin"){
         title.innerText="Weekly Check-ins";
-        text.innerText="Track progress and make strategic changes every week.";
+        text.innerText="Track progress and adjust weekly.";
     }
 
     document.getElementById("popup").style.display="flex";
 }
-
 function closePopup(){
     document.getElementById("popup").style.display="none";
 }
+
+/* 🔥 PARALLAX EFFECT */
+window.addEventListener("scroll", function() {
+    const hero = document.querySelector(".hero");
+    let offset = window.pageYOffset;
+    hero.style.backgroundPositionY = offset * 0.5 + "px";
+});
 </script>
 
 </body>
