@@ -391,42 +391,145 @@ window.addEventListener('scroll', () => {
 
 <!-- SERVICES -->
 <section class="services">
-    <h2>WHAT YOU GET</h2>
+
+    <div style="text-align:center; margin-bottom:60px;">
+        <h2 style="letter-spacing:4px; color:#e63946;">WHAT YOU GET</h2>
+        <h3 style="font-size:2.2rem; font-weight:900;">Everything You Need To Transform</h3>
+        <p style="color:#888; max-width:600px; margin:15px auto;">
+            This is more than just a plan. You get a complete system designed to keep you consistent, accountable, and progressing every week.
+        </p>
+    </div>
 
     <div class="service-grid">
 
-        <div class="service-card" onclick="openPopup('meal')">
+        <div class="service-card reveal" onclick="openPopup('meal')">
             <i class="fas fa-utensils"></i>
-            <h4>Customized Nutrition Plan</h4>
+            <h4>Customized Nutrition</h4>
+            <p>Built around your lifestyle, not restrictions.</p>
         </div>
 
-        <div class="service-card" onclick="openPopup('workout')">
+        <div class="service-card reveal" onclick="openPopup('workout')">
             <i class="fas fa-dumbbell"></i>
-            <h4>Workout Plan</h4>
+            <h4>Structured Training</h4>
+            <p>Clear, effective workouts designed for results.</p>
         </div>
 
-        <div class="service-card" onclick="openPopup('videos')">
+        <div class="service-card reveal" onclick="openPopup('videos')">
             <i class="fas fa-video"></i>
-            <h4>Exercise Videos</h4>
+            <h4>Exercise Tutorials</h4>
+            <p>Step-by-step guidance for perfect execution.</p>
         </div>
 
-        <div class="service-card" onclick="openPopup('support')">
+        <div class="service-card reveal" onclick="openPopup('support')">
             <i class="fas fa-comments"></i>
-            <h4>24/7 Support</h4>
+            <h4>Direct Support</h4>
+            <p>Message anytime for help, clarity, or motivation.</p>
         </div>
 
-        <div class="service-card" onclick="openPopup('adjust')">
+        <div class="service-card reveal" onclick="openPopup('adjust')">
             <i class="fas fa-sync"></i>
-            <h4>Adjustments</h4>
+            <h4>Real-Time Adjustments</h4>
+            <p>Plans evolve as your body progresses.</p>
         </div>
 
-        <div class="service-card" onclick="openPopup('checkin')">
+        <div class="service-card reveal" onclick="openPopup('checkin')">
             <i class="fas fa-chart-line"></i>
             <h4>Weekly Check-ins</h4>
+            <p>Track progress and stay accountable.</p>
         </div>
 
     </div>
+
+    <!-- 🔥 CTA SECTION -->
+    <div style="text-align:center; margin-top:80px;">
+        <a href="https://tr.ee/JIZ0IZsZla" target="_blank" class="cta-btn">Apply Now</a>
+
+        <p style="color:#888; margin:20px 0;">Still not sure?</p>
+
+        <a href="https://wa.me/17093301377" target="_blank" class="whatsapp-btn">
+            Get Free Consultation
+        </a>
+    </div>
+
 </section>
+
+<style>
+/* 🔥 SERVICE CARD UPGRADE */
+.service-card {
+    background: #050505;
+    padding: 30px;
+    border: 1px solid #1a1a1a;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    border-color: #e63946;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(230,57,70,0.2);
+}
+
+.service-card i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #e63946;
+}
+
+.service-card p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* 🔥 WHATSAPP BUTTON */
+.whatsapp-btn {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid #e63946;
+    color: #e63946;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background: #e63946;
+    color: white;
+}
+
+/* 🔥 SCROLL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+<script>
+/* 🔥 REPEATABLE SCROLL ANIMATION */
+const reveals2 = document.querySelectorAll('.reveal');
+
+function revealServices() {
+    const windowHeight = window.innerHeight;
+
+    reveals2.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100 && elementTop > 0) {
+            el.classList.add('active');
+        } else {
+            el.classList.remove('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealServices);
+</script>
 
 <!-- RESULTS -->
 <section class="slider-section">
