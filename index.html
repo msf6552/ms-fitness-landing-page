@@ -211,6 +211,140 @@ footer {
     This is not a temporary fix. This is a system designed to build long-term results.
     </p>
 </section>
+<!-- 🔥 MS METHODOLOGY SECTION -->
+<section id="how-it-works" style="padding: 120px 20px; background: #080808;">
+
+    <div style="text-align: center; margin-bottom: 80px;">
+        <h2 style="letter-spacing: 4px; color: #e63946;">THE PROCESS</h2>
+        <h3 style="font-size: 2.8rem; font-weight: 900;">THE MS METHODOLOGY</h3>
+    </div>
+
+    <div style="max-width: 1100px; margin: auto;">
+
+        <!-- STEP 1 -->
+        <div class="step left">
+            <div class="text">
+                <span>01</span>
+                <h4>Elite Bio-Profiling</h4>
+                <p>We break down your lifestyle, habits, and goals to build a system that actually fits your real life.</p>
+            </div>
+            <img src="Screenshot 2026-04-11 at 13.33.43.png">
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step right">
+            <div class="text">
+                <span>02</span>
+                <h4>Custom Training</h4>
+                <p>Your workouts are engineered based on your level, environment, and transformation goal.</p>
+            </div>
+            <img src="Custom-Engineered Training.png">
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step left">
+            <div class="text">
+                <span>03</span>
+                <h4>Video Coaching</h4>
+                <p>Every exercise includes my personal demonstrations so you execute perfectly every time.</p>
+            </div>
+            <img src="HD Video Coaching.png">
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step right">
+            <div class="text">
+                <span>04</span>
+                <h4>Smart Nutrition</h4>
+                <p>Customized diet strategy based on your metabolism, goal, and lifestyle.</p>
+            </div>
+            <img src="Data-Backed Nutrition.png">
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="step left">
+            <div class="text">
+                <span>05</span>
+                <h4>Progress Tracking</h4>
+                <p>Weekly adjustments based on real data to ensure continuous progress.</p>
+            </div>
+            <img src="Biometric Optimization.png">
+        </div>
+
+    </div>
+</section>
+
+<style>
+/* 🔥 STEP DESIGN */
+.step {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+    opacity: 0;
+    transform: translateY(80px) scale(0.95);
+    transition: all 0.8s ease;
+}
+
+.step img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+}
+
+.step .text span {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(230,57,70,0.2);
+}
+
+.step h4 {
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+.step p {
+    color: #888;
+}
+
+/* LEFT / RIGHT */
+.left { flex-direction: row; }
+.right { flex-direction: row-reverse; }
+
+/* ACTIVE ANIMATION */
+.step.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* MOBILE FIX */
+@media(max-width: 768px){
+    .step {
+        flex-direction: column !important;
+        text-align: center;
+    }
+}
+</style>
+
+<script>
+const steps = document.querySelectorAll('.step');
+
+function revealSteps() {
+    const windowHeight = window.innerHeight;
+
+    steps.forEach((step, index) => {
+        const elementTop = step.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+            setTimeout(() => {
+                step.classList.add('active');
+            }, index * 150);
+        }
+    });
+}
+
+window.addEventListener('scroll', revealSteps);
+</script>
 
 <!-- SERVICES -->
 <section class="services">
