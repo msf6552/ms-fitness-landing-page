@@ -552,7 +552,7 @@ window.addEventListener('scroll', revealServices);
     <h2 style="color:#e63946; margin-bottom:20px;">READY TO BEGIN?</h2>
 
     <div style="margin-top:20px;">
-        <a href="https://tr.ee/JIZ0IZsZla" target="_blank" class="cta-btn">Apply Now</a>
+        <a href="#" onclick="openForm()" class="cta-btn">
 
         <p style="color:#888; margin:15px 0;">Or still in doubt?</p>
 
@@ -620,6 +620,131 @@ window.addEventListener("scroll", function() {
     hero.style.backgroundPositionY = offset * 0.5 + "px";
 });
 </script>
+<!-- 🔥 POPUP FORM + STYLE + JS (ALL-IN-ONE) -->
 
+<style>
+.form-popup {
+    display: none;
+    position: fixed;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.form-box {
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 0.4s ease;
+}
+
+.form-box h2 {
+    margin-bottom: 10px;
+}
+
+.form-box input,
+.form-box select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #000;
+    border: 1px solid #333;
+    color: white;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 12px;
+    background: #e63946;
+    border: none;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    background: #ff4d5a;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform: scale(0.9);}
+    to {opacity:1; transform: scale(1);}
+}
+</style>
+
+<div id="formPopup" class="form-popup">
+  <div class="form-box">
+    <span class="close" onclick="closeForm()">&times;</span>
+
+    <h2>Start Today!</h2>
+    <p style="color:#aaa; font-size:14px;">
+      Here's how you can reach out to me. I'll get back to you as soon as possible.
+    </p>
+
+    <form onsubmit="sendToWhatsApp(event)">
+      
+      <input type="text" id="name" placeholder="Full Name (required)" required>
+      
+      <input type="email" id="email" placeholder="Email Address (required)" required>
+      
+      <input type="text" id="phone" placeholder="Phone (required)" required>
+      
+      <input type="text" id="goal" placeholder="What goal do you have in mind? (required)" required>
+
+      <select id="start" required>
+        <option value="">When do you want to start? (required)</option>
+        <option>Immediately</option>
+        <option>In 1-2 weeks</option>
+        <option>In 1 month</option>
+        <option>Just exploring</option>
+      </select>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function openForm() {
+    document.getElementById("formPopup").style.display = "flex";
+}
+
+function closeForm() {
+    document.getElementById("formPopup").style.display = "none";
+}
+
+function sendToWhatsApp(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let goal = document.getElementById("goal").value;
+    let start = document.getElementById("start").value;
+
+    let message = `New Client Application:%0A
+Name: ${name}%0A
+Email: ${email}%0A
+Phone: ${phone}%0A
+Goal: ${goal}%0A
+Start Time: ${start}`;
+
+    let url = `https://wa.me/17093301377?text=${message}`;
+
+    window.open(url, "_blank");
+}
+</script>
 </body>
 </html>
