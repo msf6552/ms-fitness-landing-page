@@ -10,7 +10,7 @@
 
 <style>
 * { box-sizing: border-box; }
-body { margin: 0; font-family: 'Inter', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
+body { margin: 0; font-family: 'Inter', sans-serif; background-color: #050505; color: white; }
 
 /* NAV */
 nav {
@@ -52,7 +52,6 @@ nav {
     color: white;
     text-decoration: none;
     font-weight: 700;
-    display: inline-block;
 }
 .sub-text {
     font-size: 0.9rem;
@@ -70,80 +69,7 @@ nav {
     color: #e63946;
 }
 
-/* PROCESS SECTION */
-#how-it-works {
-    padding: 120px 20px;
-    background: #080808;
-    position: relative;
-}
-
-/* 🔴 PROGRESS BAR */
-#progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4px;
-    background: #e63946;
-    width: 0%;
-    z-index: 999;
-}
-
-/* 🔥 FIXED TIMELINE LINE (Desktop) */
-.timeline-line {
-    position: absolute;
-    left: 50%;
-    top: 250px;
-    bottom: 150px; /* Anchors the line to the bottom of the last step */
-    width: 3px;
-    background: linear-gradient(to bottom, #e63946, transparent);
-    transform: translateX(-50%);
-    z-index: 0;
-}
-
-.step {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    margin-bottom: 120px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-    position: relative;
-    z-index: 1;
-}
-
-/* Active class applied by JavaScript */
-.step.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.step img {
-    width: 100%;
-    max-width: 450px;
-    border-radius: 12px;
-    transition: transform 0.4s ease;
-}
-
-.step img:hover {
-    transform: scale(1.05);
-}
-
-.step span {
-    font-size: 3rem;
-    font-weight: 900;
-    color: rgba(230,57,70,0.2);
-}
-.step h4 {
-    font-size: 1.8rem;
-    margin: 10px 0;
-}
-.step p {
-    color: #888;
-}
-
-.left { flex-direction: row; }
-.right { flex-direction: row-reverse; }
+/* PROCESS (your methodology section stays same visually) */
 
 /* SERVICES */
 .services {
@@ -160,38 +86,22 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
     gap: 30px;
 }
-
 .service-card {
     background: #050505;
-    padding: 30px;
+    padding: 25px;
     border: 1px solid #1a1a1a;
     cursor: pointer;
-    transition: all 0.4s ease;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(40px);
+    transition: 0.3s;
 }
-
-.service-card.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .service-card:hover {
     border-color: #e63946;
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(230,57,70,0.2);
+    transform: translateY(-5px);
 }
-
 .service-card i {
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    display: block;
     color: #e63946;
-}
-
-.service-card p {
-    color: #888;
-    font-size: 0.9rem;
 }
 
 /* SLIDER */
@@ -216,17 +126,351 @@ nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.8);
+    background: black;
     color: white;
     border: none;
-    padding: 15px;
+    padding: 10px;
     cursor: pointer;
-    z-index: 10;
 }
 .prev { left: 10px; }
 .next { right: 10px; }
 
-/* WHATSAPP BUTTON */
+/* POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+.popup-content {
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+}
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* APPLY */
+#apply {
+    padding: 100px 20px;
+    text-align: center;
+}
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="brand-logo">MS FITNESS</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>EVOLVE <span style="color:#e63946;">STRONGER</span></h1>
+
+        <p>
+        Built for individuals who are serious about changing their physique. 
+        No shortcuts, no guesswork, just structured training, personalized nutrition, 
+        and constant guidance to ensure you progress every single week.
+        </p>
+
+        <a href="#how-it-works" class="cta-btn">THE MS METHODOLOGY</a>
+        <p class="sub-text">Limited spots available. Only serious clients.</p>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="mission">
+    <h2>About Me</h2>
+    <h3>Real Coaching. Real Results.</h3>
+
+    <p>
+    I’m <strong>Maninder Singh Sandhu</strong>, and my approach is simple! remove confusion and give you a system that actually works.
+    <br><br>
+    Most people fail not because they lack effort, but because they follow random plans with no structure. That’s where I come in.
+    <br><br>
+    Every client I work with gets a fully customized plan based on their body, lifestyle, and goal, whether it’s fat loss, muscle gain, or full transformation.
+    <br><br>
+    But what truly makes the difference is not just the plan, it’s the constant support, real-time adjustments, and accountability that keeps you consistent.
+    <br><br>
+    This is not a temporary fix. This is a system designed to build long-term results.
+    </p>
+</section>
+<!-- 🔥 MS METHODOLOGY SECTION -->
+<section id="how-it-works" style="padding: 120px 20px; background: #080808; position: relative;">
+
+    <!-- 🔴 PROGRESS BAR -->
+    <div id="progress-bar"></div>
+
+    <div style="text-align: center; margin-bottom: 80px;">
+        <h2 style="letter-spacing: 4px; color: #e63946;">THE PROCESS</h2>
+        <h3 style="font-size: 2.8rem; font-weight: 900;">THE MS METHODOLOGY</h3>
+    </div>
+
+    <!-- 🔥 TIMELINE LINE -->
+    <div class="timeline-line"></div>
+
+    <div style="max-width: 1100px; margin: auto; position: relative;">
+
+        <!-- STEP -->
+        <div class="step left">
+            <div class="text">
+                <span>01</span>
+                <h4>Elite Bio-Profiling</h4>
+                <p>We break down your lifestyle, habits, and goals to build a system that fits your real life.</p>
+            </div>
+            <img src="Screenshot 2026-04-11 at 13.33.43.png">
+        </div>
+
+        <div class="step right">
+            <div class="text">
+                <span>02</span>
+                <h4>Custom Training</h4>
+                <p>Your workouts are engineered based on your level and transformation goal.</p>
+            </div>
+            <img src="Custom-Engineered Training.png">
+        </div>
+
+        <div class="step left">
+            <div class="text">
+                <span>03</span>
+                <h4>Video Coaching</h4>
+                <p>Every exercise includes my personal demonstrations for perfect execution.</p>
+            </div>
+            <img src="HD Video Coaching.png">
+        </div>
+
+        <div class="step right">
+            <div class="text">
+                <span>04</span>
+                <h4>Smart Nutrition</h4>
+                <p>Customized diet strategy based on your metabolism and goals.</p>
+            </div>
+            <img src="Data-Backed Nutrition.png">
+        </div>
+
+        <div class="step left">
+            <div class="text">
+                <span>05</span>
+                <h4>Progress Tracking</h4>
+                <p>Weekly adjustments ensure continuous results.</p>
+            </div>
+            <img src="Biometric Optimization.png">
+        </div>
+
+    </div>
+</section>
+
+<style>
+/* 🔴 PROGRESS BAR */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: #e63946;
+    width: 0%;
+    z-index: 999;
+}
+
+/* 🔥 TIMELINE */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    width: 3px;
+    height: 80%;
+    background: linear-gradient(to bottom, #e63946, transparent);
+    transform: translateX(-50%);
+}
+
+/* 🔥 STEP */
+.step {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 120px;
+    opacity: 0;
+    transform: translateY(80px) scale(0.95);
+    transition: all 0.8s ease;
+}
+
+.step img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+/* 🔥 HOVER ZOOM */
+.step img:hover {
+    transform: scale(1.05);
+}
+
+/* TEXT */
+.step span {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(230,57,70,0.2);
+}
+.step h4 {
+    font-size: 1.8rem;
+}
+.step p {
+    color: #888;
+}
+
+/* LEFT / RIGHT */
+.left { flex-direction: row; }
+.right { flex-direction: row-reverse; }
+
+/* ACTIVE */
+.step.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* MOBILE */
+@media(max-width: 768px){
+    .step {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .timeline-line {
+        display: none;
+    }
+}
+</style>
+
+<script>
+const steps = document.querySelectorAll('.step');
+
+/* 🔥 REPEATABLE SCROLL ANIMATION */
+function revealSteps() {
+    const windowHeight = window.innerHeight;
+
+    steps.forEach(step => {
+        const elementTop = step.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100 && elementTop > 0) {
+            step.classList.add('active');
+        } else {
+            step.classList.remove('active'); // 🔥 THIS MAKES IT REPEAT
+        }
+    });
+}
+
+/* 🔴 PROGRESS BAR */
+function updateProgressBar() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    document.getElementById('progress-bar').style.width = progress + "%";
+}
+
+window.addEventListener('scroll', () => {
+    revealSteps();
+    updateProgressBar();
+});
+</script>
+
+<!-- SERVICES -->
+<section class="services">
+
+    <div style="text-align:center; margin-bottom:60px;">
+        <h2 style="letter-spacing:4px; color:#e63946;">WHAT’S MORE</h2>
+        <h3 style="font-size:2.2rem; font-weight:900;">The Extra Edge You Won’t Get Anywhere Else</h3>
+        <p style="color:#888; max-width:600px; margin:15px auto;">
+            Beyond the core system, these are the details that separate average results from real transformations.
+        </p>
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service-card reveal">
+            <i class="fas fa-brain"></i>
+            <h4>Mindset & Discipline Coaching</h4>
+            <p>Learn how to stay consistent even when motivation is low.</p>
+        </div>
+
+        <div class="service-card reveal">
+            <i class="fas fa-fire"></i>
+            <h4>Fat Loss Optimization</h4>
+            <p>Strategic adjustments to maximize fat loss without burnout.</p>
+        </div>
+
+        <div class="service-card reveal">
+            <i class="fas fa-bolt"></i>
+            <h4>Plateau Breaking Strategies</h4>
+            <p>Advanced tweaks when progress slows down.</p>
+        </div>
+
+        <div class="service-card reveal">
+            <i class="fas fa-clock"></i>
+            <h4>Flexible Lifestyle Integration</h4>
+            <p>Plans that adapt to your schedule, not control it.</p>
+        </div>
+
+        <div class="service-card reveal">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Injury Prevention Guidance</h4>
+            <p>Train safely while maximizing long-term progress.</p>
+        </div>
+
+        <div class="service-card reveal">
+            <i class="fas fa-trophy"></i>
+            <h4>Long-Term Transformation System</h4>
+            <p>Build habits that keep results for life, not just weeks.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+/* 🔥 SERVICE CARD UPGRADE */
+.service-card {
+    background: #050505;
+    padding: 30px;
+    border: 1px solid #1a1a1a;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    border-color: #e63946;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(230,57,70,0.2);
+}
+
+.service-card i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #e63946;
+}
+
+.service-card p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* 🔥 WHATSAPP BUTTON */
 .whatsapp-btn {
     display: inline-block;
     background: transparent;
@@ -237,12 +481,154 @@ nav {
     font-weight: 700;
     transition: 0.3s;
 }
+
 .whatsapp-btn:hover {
     background: #e63946;
     color: white;
 }
 
-/* POPUP FORM */
+/* 🔥 SCROLL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+<script>
+/* 🔥 REPEATABLE SCROLL ANIMATION */
+const reveals2 = document.querySelectorAll('.reveal');
+
+function revealServices() {
+    const windowHeight = window.innerHeight;
+
+    reveals2.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100 && elementTop > 0) {
+            el.classList.add('active');
+        } else {
+            el.classList.remove('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealServices);
+</script>
+
+<!-- RESULTS -->
+<section class="slider-section">
+    <h2 style="color:#e63946;">PROVEN RESULTS</h2>
+
+    <div class="slider-container">
+        <button class="slider-btn prev" onclick="moveSlide(-1)">‹</button>
+
+        <div class="slides" id="slider">
+            <div class="slide"><img src="client1.jpg"></div>
+            <div class="slide"><img src="client2.jpg"></div>
+            <div class="slide"><img src="client3.jpg"></div>
+            <div class="slide"><img src="client4.jpg"></div>
+            <div class="slide"><img src="client5.jpg"></div>
+            <div class="slide"><img src="client6.jpg"></div>
+            <div class="slide"><img src="client7.jpg"></div>
+            <div class="slide"><img src="client8.jpg"></div>
+            <div class="slide"><img src="client9.jpg"></div>
+            <div class="slide"><img src="client10.jpg"></div>
+            <div class="slide"><img src="client11.jpg"></div>
+            <div class="slide"><img src="client12.jpg"></div>
+        </div>
+
+        <button class="slider-btn next" onclick="moveSlide(1)">›</button>
+    </div>
+</section>
+
+<!-- APPLY -->
+<section id="apply" style="padding:100px 20px; text-align:center;">
+
+    <h2 style="color:#e63946; margin-bottom:30px;">READY TO BEGIN?</h2>
+
+    <div>
+
+        <!-- APPLY BUTTON -->
+        <a href="#" onclick="openForm()" class="cta-btn" style="margin:10px;">
+            Apply Now
+        </a>
+
+        <p style="color:#888; margin:20px 0;">Or still in doubt?</p>
+
+        <!-- WHATSAPP BUTTON -->
+        <a href="https://wa.me/17093301377" target="_blank" class="whatsapp-btn" style="margin:10px;">
+            Get Free Consultation
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+© 2026 MS FITNESS
+</footer>
+
+<script>
+let index = 0;
+function moveSlide(step) {
+    const slides = document.getElementById('slider');
+    const total = slides.children.length;
+    index = (index + step + total) % total;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+setInterval(() => moveSlide(1), 4000);
+
+/* POPUPS */
+function openPopup(type) {
+    const title = document.getElementById("popup-title");
+    const text = document.getElementById("popup-text");
+
+    if(type === "meal"){
+        title.innerText="Customized Nutrition Plan";
+        text.innerText="Fully tailored to your lifestyle, preferences, and goal.";
+    }
+    if(type === "workout"){
+        title.innerText="Workout Plan";
+        text.innerText="Scientifically structured workouts designed for maximum efficiency.";
+    }
+    if(type === "videos"){
+        title.innerText="Exercise Videos";
+        text.innerText="Access my personally recorded demonstrations.";
+    }
+    if(type === "support"){
+        title.innerText="24/7 Support";
+        text.innerText="Direct access to me anytime.";
+    }
+    if(type === "adjust"){
+        title.innerText="Plan Adjustments";
+        text.innerText="Instant changes based on your progress.";
+    }
+    if(type === "checkin"){
+        title.innerText="Weekly Check-ins";
+        text.innerText="Track progress and adjust weekly.";
+    }
+
+    document.getElementById("popup").style.display="flex";
+}
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+
+/* 🔥 PARALLAX EFFECT */
+window.addEventListener("scroll", function() {
+    const hero = document.querySelector(".hero");
+    let offset = window.pageYOffset;
+    hero.style.backgroundPositionY = offset * 0.5 + "px";
+});
+</script>
+<!-- 🔥 POPUP FORM + STYLE + JS (ALL-IN-ONE) -->
+
+<style>
 .form-popup {
     display: none;
     position: fixed;
@@ -252,8 +638,9 @@ nav {
     background: rgba(0,0,0,0.85);
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 999;
 }
+
 .form-box {
     background: #111;
     padding: 30px;
@@ -262,7 +649,13 @@ nav {
     max-width: 400px;
     animation: fadeIn 0.4s ease;
 }
-.form-box input, .form-box select {
+
+.form-box h2 {
+    margin-bottom: 10px;
+}
+
+.form-box input,
+.form-box select {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
@@ -270,6 +663,7 @@ nav {
     border: 1px solid #333;
     color: white;
 }
+
 .form-box button {
     width: 100%;
     padding: 12px;
@@ -279,6 +673,11 @@ nav {
     font-weight: 700;
     cursor: pointer;
 }
+
+.form-box button:hover {
+    background: #ff4d5a;
+}
+
 .close {
     float: right;
     cursor: pointer;
@@ -289,251 +688,69 @@ nav {
     from {opacity:0; transform: scale(0.9);}
     to {opacity:1; transform: scale(1);}
 }
-
-/* MOBILE RESPONSIVENESS */
-@media(max-width: 768px){
-    .hero h1 { font-size: 2.5rem; }
-    .step {
-        flex-direction: column !important;
-        text-align: center;
-        gap: 20px;
-    }
-    .timeline-line {
-        display: none;
-    }
-}
 </style>
-</head>
-
-<body>
-
-<div id="progress-bar"></div>
-
-<nav>
-    <div class="brand-logo">MS FITNESS</div>
-</nav>
-
-<section class="hero">
-    <div>
-        <h1>EVOLVE <span style="color:#e63946;">STRONGER</span></h1>
-        <p>Built for individuals who are serious about changing their physique. No shortcuts, just science.</p>
-        <a href="#how-it-works" class="cta-btn">THE MS METHODOLOGY</a>
-        <p class="sub-text">Limited spots available. Only serious clients.</p>
-    </div>
-</section>
-
-<section class="mission">
-    <h2>About Me</h2>
-    <h3>Real Coaching. Real Results.</h3>
-    <p>
-    I’m <strong>Maninder Singh Sandhu</strong>, and my approach is simple: remove confusion and give you a system that actually works.
-    <br><br>
-    Every client I work with gets a fully customized plan based on their body, lifestyle, and goal. This is a system designed to build long-term results.
-    </p>
-</section>
-
-<section id="how-it-works">
-    <div style="text-align: center; margin-bottom: 80px;">
-        <h2 style="letter-spacing: 4px; color: #e63946;">THE PROCESS</h2>
-        <h3 style="font-size: 2.8rem; font-weight: 900; margin:0;">THE MS METHODOLOGY</h3>
-    </div>
-
-    <div class="timeline-line"></div>
-
-    <div style="max-width: 1100px; margin: auto; position: relative;">
-        <div class="step left">
-            <div class="text">
-                <span>01</span>
-                <h4>Elite Bio-Profiling</h4>
-                <p>We break down your lifestyle, habits, and goals to build a system that fits your real life.</p>
-            </div>
-            <img src="Screenshot 2026-04-11 at 13.33.43.png" alt="Bio Profiling">
-        </div>
-
-        <div class="step right">
-            <div class="text">
-                <span>02</span>
-                <h4>Custom Training</h4>
-                <p>Your workouts are engineered based on your level and transformation goal.</p>
-            </div>
-            <img src="Custom-Engineered Training.png" alt="Custom Training">
-        </div>
-
-        <div class="step left">
-            <div class="text">
-                <span>03</span>
-                <h4>Video Coaching</h4>
-                <p>Every exercise includes my personal demonstrations for perfect execution.</p>
-            </div>
-            <img src="HD Video Coaching.png" alt="Video Coaching">
-        </div>
-
-        <div class="step right">
-            <div class="text">
-                <span>04</span>
-                <h4>Smart Nutrition</h4>
-                <p>Customized diet strategy based on your metabolism and goals.</p>
-            </div>
-            <img src="Data-Backed Nutrition.png" alt="Nutrition">
-        </div>
-
-        <div class="step left">
-            <div class="text">
-                <span>05</span>
-                <h4>Progress Tracking</h4>
-                <p>Weekly adjustments ensure continuous results.</p>
-            </div>
-            <img src="Biometric Optimization.png" alt="Tracking">
-        </div>
-    </div>
-</section>
-
-<section class="services">
-    <div style="text-align:center; margin-bottom:60px;">
-        <h2 style="letter-spacing:4px; color:#e63946;">WHAT’S MORE</h2>
-        <h3 style="font-size:2.2rem; font-weight:900; margin:0;">The Extra Edge</h3>
-    </div>
-
-    <div class="service-grid">
-        <div class="service-card">
-            <i class="fas fa-brain"></i>
-            <h4>Mindset & Discipline</h4>
-            <p>Stay consistent even when motivation is low.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-fire"></i>
-            <h4>Fat Loss Optimization</h4>
-            <p>Maximize fat loss without burnout.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-bolt"></i>
-            <h4>Plateau Breaking</h4>
-            <p>Advanced tweaks when progress slows down.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-clock"></i>
-            <h4>Lifestyle Integration</h4>
-            <p>Plans that adapt to your schedule.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-shield-alt"></i>
-            <h4>Injury Prevention</h4>
-            <p>Train safely while maximizing progress.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-trophy"></i>
-            <h4>Long-Term System</h4>
-            <p>Build habits that keep results for life.</p>
-        </div>
-    </div>
-</section>
-
-<section class="slider-section">
-    <h2 style="color:#e63946; margin-bottom:40px;">PROVEN RESULTS</h2>
-    <div class="slider-container">
-        <button class="slider-btn prev" onclick="moveSlide(-1)">‹</button>
-        <div class="slides" id="slider">
-            <div class="slide"><img src="client1.jpg" alt="Client 1"></div>
-            <div class="slide"><img src="client2.jpg" alt="Client 2"></div>
-            <div class="slide"><img src="client3.jpg" alt="Client 3"></div>
-        </div>
-        <button class="slider-btn next" onclick="moveSlide(1)">›</button>
-    </div>
-</section>
-
-<section id="apply">
-    <h2 style="color:#e63946; margin-bottom:30px;">READY TO BEGIN?</h2>
-    <a href="javascript:void(0)" onclick="openForm()" class="cta-btn">Apply Now</a>
-    <p style="color:#888; margin:20px 0;">Or still in doubt?</p>
-    <a href="https://wa.me/17093301377" target="_blank" class="whatsapp-btn">Get Free Consultation</a>
-</section>
-
-<footer style="text-align:center; padding: 40px; color:#555; border-top: 1px solid #111;">
-    © 2026 MS FITNESS
-</footer>
 
 <div id="formPopup" class="form-popup">
   <div class="form-box">
     <span class="close" onclick="closeForm()">&times;</span>
+
     <h2>Start Today!</h2>
-    <p style="color:#aaa; font-size:14px; margin-bottom:20px;">Complete the form and I'll contact you.</p>
+    <p style="color:#aaa; font-size:14px;">
+      Here's how you can reach out to me. I'll get back to you as soon as possible.
+    </p>
+
     <form onsubmit="sendToWhatsApp(event)">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="email" id="email" placeholder="Email Address" required>
-      <input type="text" id="phone" placeholder="Phone Number" required>
-      <input type="text" id="goal" placeholder="Your Fitness Goal" required>
+      
+      <input type="text" id="name" placeholder="Full Name (required)" required>
+      
+      <input type="email" id="email" placeholder="Email Address (required)" required>
+      
+      <input type="text" id="phone" placeholder="Phone (required)" required>
+      
+      <input type="text" id="goal" placeholder="What goal do you have in mind? (required)" required>
+
       <select id="start" required>
-        <option value="">Starting Timeline?</option>
+        <option value="">When do you want to start? (required)</option>
         <option>Immediately</option>
         <option>In 1-2 weeks</option>
         <option>In 1 month</option>
+        <option>Just exploring</option>
       </select>
+
       <button type="submit">Submit Application</button>
     </form>
   </div>
 </div>
 
 <script>
-/* 🔥 HIGH-PERFORMANCE REVEAL LOGIC (Fixes the Jerk) */
-const observerOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            // We stop observing once shown so it doesn't "re-jerk"
-            revealObserver.unobserve(entry.target); 
-        }
-    });
-}, observerOptions);
-
-// Select all elements to be revealed
-document.querySelectorAll('.step, .service-card').forEach(el => {
-    revealObserver.observe(el);
-});
-
-/* 🔴 PROGRESS BAR & PARALLAX */
-window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const progress = (scrollTop / docHeight) * 100;
-    document.getElementById('progress-bar').style.width = progress + "%";
-
-    // Smooth Parallax for Hero
-    const hero = document.querySelector(".hero");
-    hero.style.backgroundPositionY = (scrollTop * 0.4) + "px";
-});
-
-/* SLIDER LOGIC */
-let slideIndex = 0;
-const slider = document.getElementById('slider');
-const totalSlides = slider.children.length;
-
-function moveSlide(step) {
-    slideIndex = (slideIndex + step + totalSlides) % totalSlides;
-    slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+function openForm() {
+    document.getElementById("formPopup").style.display = "flex";
 }
-// Auto slide every 5 seconds
-setInterval(() => moveSlide(1), 5000);
 
-/* FORM FUNCTIONS */
-function openForm() { document.getElementById("formPopup").style.display = "flex"; }
-function closeForm() { document.getElementById("formPopup").style.display = "none"; }
+function closeForm() {
+    document.getElementById("formPopup").style.display = "none";
+}
 
 function sendToWhatsApp(event) {
     event.preventDefault();
-    const name = document.getElementById("name").value;
-    const goal = document.getElementById("goal").value;
-    const phone = document.getElementById("phone").value;
-    const start = document.getElementById("start").value;
 
-    const message = `New Client Application:%0A- Name: ${name}%0A- Phone: ${phone}%0A- Goal: ${goal}%0A- Start: ${start}`;
-    window.open(`https://wa.me/17093301377?text=${message}`, "_blank");
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let goal = document.getElementById("goal").value;
+    let start = document.getElementById("start").value;
+
+    let message = `New Client Application:%0A
+Name: ${name}%0A
+Email: ${email}%0A
+Phone: ${phone}%0A
+Goal: ${goal}%0A
+Start Time: ${start}`;
+
+    let url = `https://wa.me/17093301377?text=${message}`;
+
+    window.open(url, "_blank");
 }
 </script>
-
 </body>
 </html>
