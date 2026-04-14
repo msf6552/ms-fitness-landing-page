@@ -47,7 +47,6 @@ nav {
     text-decoration: none;
     font-weight: 700;
 }
-
 .sub-text { font-size: 0.9rem; color: #777; }
 
 /* ABOUT */
@@ -58,6 +57,39 @@ nav {
     text-align: center;
 }
 .mission h2 { color: #e63946; }
+
+/* PROCESS */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    width: 3px;
+    height: 80%;
+    background: linear-gradient(to bottom, #e63946, transparent);
+    transform: translateX(-50%);
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 120px;
+    opacity: 0;
+    transform: translateY(80px) scale(0.95);
+    transition: all 0.8s ease;
+    will-change: transform, opacity;
+}
+.step.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.step img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+}
+.left { flex-direction: row; }
+.right { flex-direction: row-reverse; }
 
 /* SERVICES */
 .services {
@@ -70,7 +102,6 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
     gap: 30px;
 }
-
 .service-card {
     background: #050505;
     padding: 30px;
@@ -83,16 +114,15 @@ nav {
     transform: translateY(-10px) scale(1.02);
 }
 
-/* ANIMATIONS */
-.step, .reveal {
+/* REVEAL */
+.reveal {
     opacity: 0;
-    transform: translateY(60px) scale(0.95);
+    transform: translateY(60px);
     transition: all 0.8s ease;
-    will-change: transform, opacity;
 }
-.active {
-    opacity: 1 !important;
-    transform: translateY(0) scale(1) !important;
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* PROGRESS BAR */
@@ -100,10 +130,16 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    height: 0px;
+    height: 0;
     background: #e63946;
     width: 0%;
     z-index: 999;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .step { flex-direction: column !important; text-align: center; }
+    .timeline-line { display: none; }
 }
 </style>
 </head>
@@ -128,17 +164,26 @@ nav {
     <p>I’m <strong>Maninder Singh Sandhu</strong>...</p>
 </section>
 
-<section class="services">
-    <h2>WHAT’S MORE</h2>
+<section id="how-it-works" style="padding:120px 20px; background:#080808; position:relative;">
+<div id="progress-bar"></div>
+<div class="timeline-line"></div>
 
-    <div class="service-grid">
-        <div class="service-card reveal">Mindset Coaching</div>
-        <div class="service-card reveal">Fat Loss</div>
-        <div class="service-card reveal">Plateau Break</div>
-    </div>
+<div style="max-width:1100px; margin:auto;">
+<div class="step left"><img src="IMG_9577.jpg"></div>
+<div class="step right"><img src="IMG_9578.jpg"></div>
+<div class="step left"><img src="IMG_9579.jpg"></div>
+</div>
 </section>
 
-<div id="progress-bar"></div>
+<section class="services">
+<h2>WHAT’S MORE</h2>
+
+<div class="service-grid">
+<div class="service-card reveal">Mindset Coaching</div>
+<div class="service-card reveal">Fat Loss</div>
+<div class="service-card reveal">Plateau Break</div>
+</div>
+</section>
 
 <script>
 const steps = document.querySelectorAll('.step');
@@ -148,12 +193,10 @@ const progressBar = document.getElementById('progress-bar');
 
 let ticking = false;
 
-/* 🔥 MAIN OPTIMIZED LOOP */
 function updateUI() {
     const windowHeight = window.innerHeight;
     const scrollTop = window.scrollY;
 
-    /* Reveal animations (NO RESET = smooth) */
     steps.forEach(el => {
         if (el.getBoundingClientRect().top < windowHeight - 100) {
             el.classList.add('active');
@@ -166,21 +209,18 @@ function updateUI() {
         }
     });
 
-    /* Progress bar */
     if(scrollTop > 10) progressBar.style.height = "4px";
     const docHeight = document.body.scrollHeight - window.innerHeight;
     progressBar.style.width = (scrollTop / docHeight) * 100 + "%";
 
-    /* Smooth parallax (GPU) */
     hero.style.transform = `translateY(${scrollTop * 0.3}px)`;
 
     ticking = false;
 }
 
-/* 🔥 SCROLL OPTIMIZER */
 window.addEventListener('scroll', () => {
     if (!ticking) {
-        window.requestAnimationFrame(updateUI);
+        requestAnimationFrame(updateUI);
         ticking = true;
     }
 });
