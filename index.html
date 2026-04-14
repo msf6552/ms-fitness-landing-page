@@ -292,11 +292,12 @@ footer {
 .timeline-line {
     position: absolute;
     left: 50%;
-    top: 200px;
+    top: 50px; /* Adjusted to start higher */
+    bottom: 50px; /* Makes it dynamic to the section height */
     width: 3px;
-    height: 80%;
     background: linear-gradient(to bottom, #e63946, transparent);
     transform: translateX(-50%);
+    z-index: 0;
 }
 
 /* 🔥 STEP */
@@ -383,11 +384,18 @@ function updateProgressBar() {
     document.getElementById('progress-bar').style.width = progress + "%";
 }
 
+/* 🔴 PROGRESS BAR & PARALLAX ONLY */
 window.addEventListener('scroll', () => {
-    revealSteps();
-    updateProgressBar();
+    // Progress Bar
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    document.getElementById('progress-bar').style.width = progress + "%";
+
+    // Parallax
+    const hero = document.querySelector(".hero");
+    hero.style.backgroundPositionY = scrollTop * 0.5 + "px";
 });
-</script>
 
 <!-- SERVICES -->
 <section class="services">
@@ -500,23 +508,24 @@ window.addEventListener('scroll', () => {
 </style>
 
 <script>
-/* 🔥 REPEATABLE SCROLL ANIMATION */
-const reveals2 = document.querySelectorAll('.reveal');
+/* 🔥 SMOOTH SCROLL REVEAL (NO JERK) */
+const observerOptions = {
+    threshold: 0.1
+};
 
-function revealServices() {
-    const windowHeight = window.innerHeight;
-
-    reveals2.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 100 && elementTop > 0) {
-            el.classList.add('active');
-        } else {
-            el.classList.remove('active');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // By NOT removing the class, we stop the "jerking" effect
         }
     });
-}
+}, observerOptions);
 
+// Tell the browser to watch your steps and service cards
+document.querySelectorAll('.step, .reveal').forEach(el => {
+    observer.observe(el);
+});
 window.addEventListener('scroll', revealServices);
 </script>
 
