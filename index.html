@@ -487,20 +487,21 @@ window.addEventListener('scroll', () => {
 
 /* 🔥 SCROLL ANIMATION */
 .reveal {
-    opacity: 0;
-    transform: translateY(60px);
-    transition: all 0.8s ease;
-    will-change: transform, opacity;
+    opacity: 0 !important;
+    transform: translateY(50px) !important;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-    
-.delay-1 { transition-delay: 0.1s; } 
-.delay-2 { transition-delay: 0.4s; } 
-.delay-3 { transition-delay: 0.7s; } 
 
+/* 2. This class is added by your JavaScript when you scroll to the section */
+.reveal.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* 3. The Staggered Delays (This creates the "one-by-one" effect) */
+.delay-1 { transition-delay: 0.2s !important; } /* Title */
+.delay-2 { transition-delay: 0.5s !important; } /* Image */
+.delay-3 { transition-delay: 0.8s !important; } /* Paragraphs */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
