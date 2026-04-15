@@ -277,12 +277,14 @@ footer {
 </section>
 
 <style>
+    .step, .reveal {
+    will-change: transform, opacity;
 /* 🔴 PROGRESS BAR */
 #progress-bar {
     position: fixed;
     top: 0;
     left: 0;
-    height: 4px;
+    height: 0px;
     background: #e63946;
     width: 0%;
     z-index: 999;
