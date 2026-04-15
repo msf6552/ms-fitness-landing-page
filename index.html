@@ -277,14 +277,12 @@ footer {
 </section>
 
 <style>
-    .step, .reveal {
-    will-change: transform, opacity;
 /* 🔴 PROGRESS BAR */
 #progress-bar {
     position: fixed;
     top: 0;
     left: 0;
-    height: 0px;
+    height: 4px;
     background: #e63946;
     width: 0%;
     z-index: 999;
@@ -310,6 +308,7 @@ footer {
     opacity: 0;
     transform: translateY(80px) scale(0.95);
     transition: all 0.8s ease;
+    will-change: transform, opacity;
 }
 
 .step img {
@@ -494,6 +493,7 @@ window.addEventListener('scroll', () => {
     opacity: 0;
     transform: translateY(60px);
     transition: all 0.8s ease;
+    will-change: transform, opacity;
 }
 .reveal.active {
     opacity: 1;
@@ -502,24 +502,55 @@ window.addEventListener('scroll', () => {
 </style>
 
 <script>
-/* 🔥 REPEATABLE SCROLL ANIMATION */
-const reveals2 = document.querySelectorAll('.reveal');
+document.addEventListener("DOMContentLoaded", () => {
+    const observerOptions = { threshold: 0.15 };
 
-function revealServices() {
-    const windowHeight = window.innerHeight;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.classList.remove('active');
+            }
+        });
+    }, observerOptions);
 
-    reveals2.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
+    document.querySelectorAll('.step, .reveal').forEach(el => {
+        observer.observe(el);
+    });
 
-        if (elementTop < windowHeight - 100 && elementTop > 0) {
-            el.classList.add('active');
-        } else {
-            el.classList.remove('active');
+    let ticking = false;
+    const hero = document.querySelector(".hero");
+    const progressBar = document.getElementById('progress-bar');
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.body.scrollHeight - window.innerHeight;
+                const progress = (scrollTop / docHeight) * 100;
+                if(progressBar) progressBar.style.width = progress + "%";
+
+                if(hero) hero.style.backgroundPositionY = (scrollTop * 0.5) + "px";
+                
+                ticking = false;
+            });
+            ticking = true;
         }
     });
-}
+});
 
-window.addEventListener('scroll', revealServices);
+let index = 0;
+function moveSlide(step) {
+    const slides = document.getElementById('slider');
+    if(!slides) return;
+    const total = slides.children.length;
+    index = (index + step + total) % total;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+setInterval(() => moveSlide(1), 4000);
+
+// Keep your existing openForm, closeForm, and sendToWhatsApp functions below this line
 </script>
 
 <!-- RESULTS -->
