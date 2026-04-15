@@ -164,6 +164,25 @@ nav {
     padding: 100px 20px;
     text-align: center;
 }
+    .food-first {
+    padding: 100px 20px;
+    background: #050505;
+}
+.ffa-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.ffa-image { flex: 1; }
+.ffa-image img { width: 100%; border-radius: 12px; border: 1px solid #1a1a1a; }
+.ffa-content { flex: 1; }
+.ffa-content p { color: #ccc; line-height: 1.8; margin-bottom: 20px; font-size: 1.05rem; }
+.ffa-content strong { color: white; font-weight: 700; }
+@media(max-width: 768px){
+    .ffa-container { flex-direction: column; text-align: center; }
+}
 footer {
     text-align: center;
     padding: 40px;
