@@ -403,8 +403,8 @@ window.addEventListener('scroll', () => {
     <h3 style="font-size:2.5rem; font-weight:900;">Choose Your Commitment</h3>
 
     <div class="service-grid" style="margin-top:40px;">
-    <div class="service-card" onclick="scrollToApply()">
-    <h4>1 Month Plan</h4>
+  <div class="service-card" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+    <h4>🔴 1 Month Plan</h4>
 
     <p style="margin:10px 0;">
         <span style="text-decoration:line-through; color:#777;">$199</span>
@@ -427,8 +427,8 @@ window.addEventListener('scroll', () => {
 </div>
 
 
-<div class="service-card" style="border-color:#e63946;" onclick="scrollToApply()">
-    <h4>3 Month Transformation (Most Popular)</h4>
+<div class="service-card popular-plan" onclick="scrollToApply()">
+    <h4>🔥 3 Month Transformation</h4>
 
     <p style="margin:10px 0;">
         <span style="text-decoration:line-through; color:#777;">$599</span>
@@ -436,7 +436,7 @@ window.addEventListener('scroll', () => {
     </p>
 
     <p style="color:#e63946; font-weight:700; margin-bottom:10px;">
-        Recommended for fastest transformation results
+        Most Popular • Best Results
     </p>
 
     <p style="margin-top:15px; text-align:left; font-size:0.9rem; color:#ccc;">
@@ -896,7 +896,16 @@ function openForm() {
 function closeForm() {
     document.getElementById("formPopup").style.display = "none";
 }
-
+function scrollToApply() {
+    const applySection = document.getElementById("apply");
+    
+    if (applySection) {
+        applySection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+}
 function sendToWhatsApp(event) {
     event.preventDefault();
 
