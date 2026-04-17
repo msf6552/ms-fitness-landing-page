@@ -403,42 +403,57 @@ window.addEventListener('scroll', () => {
     <h3 style="font-size:2.5rem; font-weight:900;">Choose Your Commitment</h3>
 
     <div class="service-grid" style="margin-top:40px;">
-     <div class="service-card">
+<p style="color:#888; margin-top:10px;">
+    Prices shown are limited-time discounted rates
+</p>
+    <div class="service-card" onclick="scrollToApply()">
     <h4>1 Month Plan</h4>
-    <p style="color:#888;">Perfect to get started</p>
+
+    <p style="margin:10px 0;">
+        <span style="text-decoration:line-through; color:#777;">$199</span>
+        <span style="color:#e63946; font-weight:900; font-size:1.3rem;"> $149</span>
+    </p>
 
     <p style="margin-top:15px; text-align:left; font-size:0.9rem; color:#ccc;">
         <strong>Customized Movement Screen:</strong> Personalized video assessments to ensure perfect form and injury prevention from day one.<br><br>
 
-        <strong>Flexible Nutrition Blueprints:</strong> Science-based macro targets and supplement protocols adapted for both training days and social life.<br><br>
+        <strong>Flexible Nutrition Blueprints:</strong> Science-based macro targets adapted for real life.<br><br>
 
-        <strong>Annotated Form Analysis:</strong> Unlimited video reviews of your lifts with technical corrections to maximize exercise efficiency.<br><br>
+        <strong>Annotated Form Analysis:</strong> Unlimited video reviews with corrections.<br><br>
 
-        <strong>Weekly Check-ins:</strong> Detailed personal audits to review your data, progress trends, and mindset.<br><br>
+        <strong>Weekly Check-ins:</strong> Progress tracking and adjustments.<br><br>
 
-        <strong>The Lifestyle Vault:</strong> Comprehensive guides for staying on track during travel, dining out, and busy work weeks.<br><br>
+        <strong>The Lifestyle Vault:</strong> Travel & lifestyle strategies.<br><br>
 
-        <strong>Direct 1-on-1 Consults:</strong> Regular calls to troubleshoot obstacles and refine long-term strategy.
+        <strong>Direct 1-on-1 Consults:</strong> Regular calls for guidance.
     </p>
 </div>
 
 
-<div class="service-card" style="border-color:#e63946;">
+<div class="service-card" style="border-color:#e63946;" onclick="scrollToApply()">
     <h4>3 Month Transformation (Most Popular)</h4>
-    <p style="color:#888;">Best results & value</p>
+
+    <p style="margin:10px 0;">
+        <span style="text-decoration:line-through; color:#777;">$599</span>
+        <span style="color:#e63946; font-weight:900; font-size:1.4rem;"> $399</span>
+    </p>
+
+    <p style="color:#e63946; font-weight:700; margin-bottom:10px;">
+        Recommended for fastest transformation results
+    </p>
 
     <p style="margin-top:15px; text-align:left; font-size:0.9rem; color:#ccc;">
         <strong>Customized Movement Screen:</strong> Personalized video assessments to ensure perfect form and injury prevention from day one.<br><br>
 
-        <strong>Flexible Nutrition Blueprints:</strong> Science-based macro targets and supplement protocols adapted for both training days and social life.<br><br>
+        <strong>Flexible Nutrition Blueprints:</strong> Science-based macro targets adapted for real life.<br><br>
 
-        <strong>Annotated Form Analysis:</strong> Unlimited video reviews of your lifts with technical corrections to maximize exercise efficiency.<br><br>
+        <strong>Annotated Form Analysis:</strong> Unlimited video reviews with corrections.<br><br>
 
-        <strong>Weekly Check-ins:</strong> Detailed personal audits to review your data, progress trends, and mindset.<br><br>
+        <strong>Weekly Check-ins:</strong> Progress tracking and adjustments.<br><br>
 
-        <strong>The Lifestyle Vault:</strong> Comprehensive guides for staying on track during travel, dining out, and busy work weeks.<br><br>
+        <strong>The Lifestyle Vault:</strong> Travel & lifestyle strategies.<br><br>
 
-        <strong>Direct 1-on-1 Consults:</strong> Regular calls to troubleshoot obstacles and refine long-term strategy.
+        <strong>Direct 1-on-1 Consults:</strong> Regular calls for guidance.
     </p>
 </div>
 </section>
@@ -904,6 +919,12 @@ Start Time: ${start}`;
     let url = `https://wa.me/17093301377?text=${message}`;
 
     window.open(url, "_blank");
+}
+</script>
+    function scrollToApply() {
+    document.getElementById("apply").scrollIntoView({
+        behavior: "smooth"
+    });
 }
 </script>
     <a href="#apply" style="
