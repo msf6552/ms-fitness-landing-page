@@ -196,6 +196,15 @@ footer {
 
 <nav>
     <div class="brand-logo">MS FITNESS</div>
+
+    <div style="display:flex; gap:20px; align-items:center;">
+        <a href="https://instagram.com/ms_trains__" target="_blank" style="color:white; font-size:1.2rem;">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://tiktok.com/@ms_trains__" target="_blank" style="color:white; font-size:1.2rem;">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
 </nav>
 
 <!-- HERO -->
@@ -237,10 +246,20 @@ footer {
     <h3 style="font-size:2.5rem; font-weight:900;">Not Your Average Coaching</h3>
 
     <div class="service-grid" style="margin-top:40px;">
-        <div class="service-card">Customized Plans — no copy paste workouts</div>
-        <div class="service-card">Direct Coach Access — real accountability</div>
-        <div class="service-card">Science-Based Approach — no bro science</div>
-    </div>
+      <div class="service-card">
+    <strong style="font-size:1.1rem;">Customized Plans</strong><br>
+    <span style="color:#888;">No copy paste workouts</span>
+</div>
+
+<div class="service-card">
+    <strong style="font-size:1.1rem;">Direct Coach Access</strong><br>
+    <span style="color:#888;">Real accountability</span>
+</div>
+
+<div class="service-card">
+    <strong style="font-size:1.1rem;">Science-Based Approach</strong><br>
+    <span style="color:#888;">No bro science</span>
+</div>
 </section>
 <!-- 🔥 MS METHODOLOGY SECTION -->
 <section id="how-it-works" style="padding: 120px 20px; background: #080808; position: relative;">
@@ -398,6 +417,39 @@ window.addEventListener('scroll', () => {
     updateProgressBar();
 });
 </script>
+    <section class="food-first">
+    <div class="ffa-container">
+        
+        <div class="ffa-image reveal delay-2">
+            <img src="FFA.png" alt="Food First Approach">
+        </div>
+
+        <div class="ffa-content">
+            <h2 class="reveal delay-1" style="color:#e63946; letter-spacing:4px;">THE PHILOSOPHY</h2>
+            <h3 class="reveal delay-1" style="font-size:2.5rem; font-weight:900; margin-bottom: 20px;">FOOD FIRST APPROACH</h3>
+            
+            <div class="reveal delay-3">
+                <p>
+                    Whether you are vegetarian, non-vegetarian, vegan, or follow any other dietary preference, 
+                    my coaching is built around a <strong>Food-First Approach</strong>. This means prioritizing 
+                    whole, nutrient-dense foods to drive real, sustainable results without unnecessary reliance on supplements.
+                </p>
+                
+                <p>
+                    That said, supplements are not inherently bad. I personally use a few and recommend them to 
+                    clients when there is a clear, specific need. However, they are meant to fill gaps, not 
+                    replace the foundation. Whole foods provide a broader spectrum of nutrients, better satiety, 
+                    and long-term health benefits that supplements simply cannot replicate.
+                </p>
+                
+                <p>
+                    Once you begin to see progress by improving your daily eating habits, you will truly 
+                    understand the value of the <strong>Food First Approach</strong> and how powerful 
+                    proper nutrition can be.
+                </p>
+            </div>
+        </div>
+    </div>
     <section style="padding:100px 20px; text-align:center; background:#000;">
     <h2 style="color:#e63946;">COACHING PLANS</h2>
     <h3 style="font-size:2.5rem; font-weight:900;">Choose Your Commitment</h3>
@@ -428,7 +480,7 @@ window.addEventListener('scroll', () => {
 
 
 <div class="service-card popular-plan" onclick="scrollToApply()">
-    <h4>🔥 3 Month Transformation</h4>
+   <h4><i class="fas fa-fire"></i> 3 Month Transformation</h4>
 
     <p style="margin:10px 0;">
         <span style="text-decoration:line-through; color:#777;">$599</span>
@@ -628,42 +680,12 @@ function moveSlide(step) {
     index = (index + step + total) % total;
     slides.style.transform = `translateX(-${index * 100}%)`;
 }
-setInterval(() => moveSlide(1), 4000);
+setInterval(() => {
+    moveSlide(1);
+}, 3500);
 
 </script>
-<section class="food-first">
-    <div class="ffa-container">
-        
-        <div class="ffa-image reveal delay-2">
-            <img src="FFA.png" alt="Food First Approach">
-        </div>
 
-        <div class="ffa-content">
-            <h2 class="reveal delay-1" style="color:#e63946; letter-spacing:4px;">THE PHILOSOPHY</h2>
-            <h3 class="reveal delay-1" style="font-size:2.5rem; font-weight:900; margin-bottom: 20px;">FOOD FIRST APPROACH</h3>
-            
-            <div class="reveal delay-3">
-                <p>
-                    Whether you are vegetarian, non-vegetarian, vegan, or follow any other dietary preference, 
-                    my coaching is built around a <strong>Food-First Approach</strong>. This means prioritizing 
-                    whole, nutrient-dense foods to drive real, sustainable results without unnecessary reliance on supplements.
-                </p>
-                
-                <p>
-                    That said, supplements are not inherently bad. I personally use a few and recommend them to 
-                    clients when there is a clear, specific need. However, they are meant to fill gaps, not 
-                    replace the foundation. Whole foods provide a broader spectrum of nutrients, better satiety, 
-                    and long-term health benefits that supplements simply cannot replicate.
-                </p>
-                
-                <p>
-                    Once you begin to see progress by improving your daily eating habits, you will truly 
-                    understand the value of the <strong>Food First Approach</strong> and how powerful 
-                    proper nutrition can be.
-                </p>
-            </div>
-        </div>
-    </div>
 </section>
     <!-- WHO THIS IS FOR -->
 <section style="padding:100px 20px; text-align:center;">
