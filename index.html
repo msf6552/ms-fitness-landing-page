@@ -38,7 +38,7 @@ body { margin: 0; font-family: 'Inter', sans-serif; background-color: #050505; c
     border: 1px solid #1a1a1a;
 }
 
-/* 🔥 ANIMATION */
+/* ANIMATION */
 .reveal-left {
     opacity: 0;
     transform: translateX(-80px);
@@ -258,9 +258,7 @@ footer {
 <!-- HERO -->
 <h1 style="line-height:1.1;">
     EVOLVE<br>
-   <span style="color:#e63946; text-shadow:0 0 12px rgba(230,57,70,0.5);">
-    STRONGER
-</span>
+    <span style="color:#e63946;">STRONGER</span>
 </h1>
 
 <p style="max-width:600px; margin:20px auto; font-size:1.05rem; line-height:1.6;">
@@ -285,17 +283,17 @@ and constant guidance to ensure you progress every single week.
         <h2>About Me</h2>
         <h3>Real Coaching. Real Results.</h3>
 
-    <p>
-    I’m <strong>Maninder Singh Sandhu</strong>, and my approach is simple! remove confusion and give you a system that actually works.
-    <br><br>
-    Most people fail not because they lack effort, but because they follow random plans with no structure. That’s where I come in.
-    <br><br>
-    Every client I work with gets a fully customized plan based on their body, lifestyle, and goal, whether it’s fat loss, muscle gain, or full transformation.
-    <br><br>
-    But what truly makes the difference is not just the plan, it’s the constant support, real-time adjustments, and accountability that keeps you consistent.
-    <br><br>
-    This is not a temporary fix. This is a system designed to build long-term results.
-    </p>
+        <p>
+        I’m <strong>Maninder Singh Sandhu</strong>, and my approach is simple! remove confusion and give you a system that actually works.
+        <br><br>
+        Most people fail not because they lack effort, but because they follow random plans with no structure. That’s where I come in.
+        <br><br>
+        Every client I work with gets a fully customized plan based on their body, lifestyle, and goal.
+        <br><br>
+        This is not a temporary fix. This is a system designed to build long-term results.
+        </p>
+    </div>
+
 </section>
     <!-- WHY MS FITNESS -->
 <section style="padding:100px 20px; text-align:center;">
@@ -704,7 +702,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.step, .reveal').forEach(el => {
+document.querySelectorAll('.step, .reveal, .reveal-left, .reveal-right').forEach(el => {
         observer.observe(el);
     });
 
@@ -737,9 +735,6 @@ function moveSlide(step) {
     index = (index + step + total) % total;
     slides.style.transform = `translateX(-${index * 100}%)`;
 }
-setInterval(() => {
-    moveSlide(1);
-}, 3500);
     
 </script>
 </section>
@@ -843,7 +838,6 @@ function moveSlide(step) {
     index = (index + step + total) % total;
     slides.style.transform = `translateX(-${index * 100}%)`;
 }
-setInterval(() => moveSlide(1), 4000);
 
 /* POPUPS */
 function openPopup(type) {
