@@ -269,6 +269,34 @@ footer {
         height: 190px;
     }
 }
+    /* Preview Overlay Styles */
+.preview-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-overlay img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 2px solid #e63946;
+    border-radius: 8px;
+}
+
+.close-preview {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
 </style>
 </head>
 
@@ -305,19 +333,33 @@ footer {
         <p class="sub-text">Limited spots available. Only serious clients.</p>
     </div>
 </section>
-<section class="film-roll-section">
+<section class="film-roll-section" id="proven-results">
+    <h2 style="color:#e63946; margin-bottom: 10px;">PROVEN RESULTS</h2>
     <div class="film-roll-container">
         <div class="film-roll-track">
-            <div class="film-frame"><img src="client1.jpg" alt="Transformation"></div>
-            <div class="film-frame"><img src="client2.jpg" alt="Transformation"></div>
-            <div class="film-frame"><img src="client3.jpg" alt="Transformation"></div>
-            <div class="film-frame"><img src="client4.jpg" alt="Transformation"></div>
-            <div class="film-frame"><img src="client5.jpg" alt="Transformation"></div>
-            <div class="film-frame"><img src="client6.jpg" alt="Transformation"></div>
-            <div class="film-frame"><img src="client7.jpg" alt="Transformation"></div>
-            <div class="film-frame"><img src="client8.jpg" alt="Transformation"></div>
+            <div class="film-frame"><img src="client1.jpg" onclick="openPreview(this.src)"></div>
+            <div class="film-frame"><img src="client2.jpg" onclick="openPreview(this.src)"></div>
+            <div class="film-frame"><img src="client3.jpg" onclick="openPreview(this.src)"></div>
+            <div class="film-frame"><img src="client4.jpg" onclick="openPreview(this.src)"></div>
+            <div class="film-frame"><img src="client5.jpg" onclick="openPreview(this.src)"></div>
+            <div class="film-frame"><img src="client6.jpg" onclick="openPreview(this.src)"></div>
+            <div class="film-frame"><img src="client7.jpg" onclick="openPreview(this.src)"></div>
+            <div class="film-frame"><img src="client8.jpg" onclick="openPreview(this.src)"></div>
+            <div class="film-frame"><img src="client9.jpg" onclick="openPreview(this.src)"></div>
+            <div class="film-frame"><img src="client10.jpg" onclick="openPreview(this.src)"></div>
+            <div class="film-frame"><img src="client11.jpg" onclick="openPreview(this.src)"></div>
+            <div class="film-frame"><img src="client12.jpg" onclick="openPreview(this.src)"></div>
         </div>
     </div>
+    <p style="color: #555; font-size: 0.8rem; margin-top: 10px; text-transform: uppercase; letter-spacing: 2px;">
+        Tap to preview • Slide to view more
+    </p>
+</section>
+
+<div id="imagePreview" class="preview-overlay" onclick="closePreview()">
+    <span class="close-preview">&times;</span>
+    <img id="previewImg" src="">
+</div>
     <p style="color: #555; font-size: 0.8rem; margin-top: 10px; text-transform: uppercase; letter-spacing: 2px;">
         Slide to view results
     </p>
@@ -1090,5 +1132,15 @@ color:white;
 Apply Now
 
 </a>
+<script>
+    function openPreview(src) {
+        document.getElementById("previewImg").src = src;
+        document.getElementById("imagePreview").style.display = "flex";
+    }
+
+    function closePreview() {
+        document.getElementById("imagePreview").style.display = "none";
+    }
+</script>
 </body>
-</html>
+</html>        
