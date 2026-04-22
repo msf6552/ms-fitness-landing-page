@@ -215,6 +215,59 @@ footer {
     text-align: center;
     padding: 40px;
     color: #555;
+}.film-roll-section {
+    padding: 60px 0;
+    background: #050505;
+    text-align: center;
+    overflow: hidden;
+}
+
+.film-roll-container {
+    width: 100%;
+    overflow-x: auto; 
+    white-space: nowrap;
+    padding: 20px 0;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
+}
+
+.film-roll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.film-roll-track {
+    display: inline-flex;
+    gap: 15px;
+    padding: 0 40px;
+}
+
+.film-frame {
+    flex: 0 0 auto;
+    width: 180px; 
+    height: 240px;
+    background: #111;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #1a1a1a;
+    transition: transform 0.3s ease;
+}
+
+.film-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.film-frame:hover {
+    transform: scale(1.05);
+    border-color: #e63946;
+}
+
+@media (max-width: 768px) {
+    .film-frame {
+        width: 140px;
+        height: 190px;
+    }
 }
 </style>
 </head>
@@ -269,7 +322,7 @@ footer {
         Slide to view results
     </p>
 </section>
-<!-- ABOUT -->
+    <!-- ABOUT -->
 <section class="mission about-section">
 
     <div class="about-img reveal">
@@ -292,6 +345,7 @@ footer {
     </div>
 
 </section>
+
     <!-- WHY MS FITNESS -->
 <section style="padding:100px 20px; text-align:center;">
     <h2 class="reveal" style="color:#e63946; letter-spacing:4px;">WHY MS FITNESS</h2>
